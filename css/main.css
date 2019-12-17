@@ -342,6 +342,7 @@ footer .theme-by {
 }
 .post-preview .post-subtitle {
   margin: 0;
+  font-size: 15px;
   font-weight: 300;
   margin-bottom: 10px;
 }
