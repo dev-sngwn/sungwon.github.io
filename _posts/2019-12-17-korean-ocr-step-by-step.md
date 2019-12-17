@@ -1,7 +1,8 @@
 ---
+layout: post
 title: "한국어 OCR 해내기 (With Naver Cloud Platform) 1편 (edit)"
-date: 2019-12-17 13:50:30 -0400
-categories: Guide
+subtitle: 쉽고 빠르게 General OCR API를 만들자
+tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 ---
 
 &nbsp;최근 한국어 OCR을 사용할 일이 생겼다. OCR 연구가 활발함은 어렴풋이 알고 있었고, 실생활에서도 몇몇 프로그램엔 이미 적용된 기술이니 수월할거라고 지레 짐작을 했는데...  
