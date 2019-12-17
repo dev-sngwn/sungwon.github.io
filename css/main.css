@@ -3,13 +3,12 @@ layout: null
 ---
 
 @import url("pygment_highlights.css");
-@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 
 /* --- General --- */
 
 body {
-  font-family: 'NanumGothic', 'Lora', 'Times New Roman', serif;
-  font-size: 17px;
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 18px;
   color: #404040;
   position: relative;
   background-color: {{ site.page-col }};
@@ -19,11 +18,11 @@ body {
   {% endif %}
 }
 p {
-  line-height: 1.7;
+  line-height: 1.5;
   margin: 30px 0;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'NanumGothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
 a {
@@ -58,7 +57,7 @@ hr.small {
 }
 
 .main-explain-area {
-  font-family: 'NanumGothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 15px inherit;
 }
 
@@ -109,7 +108,7 @@ img {
 .navbar-custom {
   background-color: {{ site.navbar-col }};
   border-bottom: 1px solid #EAEAEA;
-  font-family: 'NanumGothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   {% if site.navbar-img %}
   background-image: url({{ site.navbar-img | relative_url }});
   background-attachment: fixed;
@@ -341,7 +340,6 @@ footer .theme-by {
 }
 .post-preview .post-subtitle {
   margin: 0;
-  font-size: 20px;
   font-weight: 300;
   margin-bottom: 10px;
 }
