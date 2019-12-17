@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: https://mmsw0324.github.io/sitemap.xml
