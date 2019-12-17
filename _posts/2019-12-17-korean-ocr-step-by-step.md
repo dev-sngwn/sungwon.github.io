@@ -26,7 +26,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
   
 <img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/NCP.png?raw=true" width="30%"/>
   
-<i><a href="NAVER CLOUD PLATFORM">(https://www.ncloud.com/)</a></i>
+<i><a href="https://www.ncloud.com/">NAVER CLOUD PLATFORM</a></i>
 
 </center>
 <br>
