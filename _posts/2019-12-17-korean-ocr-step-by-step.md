@@ -5,6 +5,16 @@ subtitle: : 쉽고 빠르게 General OCR API를 만들자
 tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 ---
 
+---
+layout: post
+title: Test markdown
+subtitle: Each post also has a subtitle
+gh-repo: daattali/beautiful-jekyll
+gh-badge: [star, fork, follow]
+tags: [test]
+comments: true
+---
+
 &nbsp;최근 한국어 OCR을 사용할 일이 생겼다. OCR 연구가 활발함은 어렴풋이 알고 있었고, 실생활에서도 몇몇 프로그램엔 이미 적용된 기술이니 수월할거라고 지레 짐작을 했는데...  
 <br>
 <center>
