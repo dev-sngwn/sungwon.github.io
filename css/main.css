@@ -336,7 +336,8 @@ footer .theme-by {
 }
 
 .post-preview .post-title {
-  font-size: 30px;
+  font-size: 25px;
+  letter-spacing: 0.5px
   margin-top: 0;
 }
 .post-preview .post-subtitle {
