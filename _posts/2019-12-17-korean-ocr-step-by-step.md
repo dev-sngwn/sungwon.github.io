@@ -26,7 +26,7 @@ categories: Guide
   
 <img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/NCP.png?raw=true" width="30%"/>
   
-[NAVER CLOUD PLATFORM](https://www.ncloud.com/)
+[<i>NAVER CLOUD PLATFORM</i>](https://www.ncloud.com/)
 
 </center>
 <br>
