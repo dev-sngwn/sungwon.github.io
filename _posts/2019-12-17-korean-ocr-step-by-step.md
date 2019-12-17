@@ -21,6 +21,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 
 ### 0. 우선 NCP의 회원이 되십시오!<br>
+<br>
 
 <center>
   
