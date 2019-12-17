@@ -8,7 +8,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 &nbsp;최근 한국어 OCR을 사용할 일이 생겼다. OCR 연구가 활발함은 어렴풋이 알고 있었고, 실생활에서도 몇몇 프로그램엔 이미 적용된 기술이니 수월할거라고 지레 짐작을 했는데...  
 <br>
 <center>
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_postassets/tesseract.JPG?raw=true" width="100%"/><br>
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_post/assets/tesseract.JPG?raw=true" width="100%"/><br>
 <i>네 잘 지나섰니댜7 ^^</i><br>
 </center>
 <br>
