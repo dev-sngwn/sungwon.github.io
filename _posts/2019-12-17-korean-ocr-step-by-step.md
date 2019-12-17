@@ -20,9 +20,10 @@ categories: Guide
 <br>
 <br>
 
-### 1. 우선 NCP의 회원이 되십시오!
+### 1. 우선 NCP의 회원이 되십시오!<br>
 
 <center>
+  
 <img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/NCP.png?raw=true" width="30%"/>
   
 [NAVER CLOUD PLATFORM](https://www.ncloud.com/)
