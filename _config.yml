@@ -1,10 +1,10 @@
 # --- General options --- #
 
 # Short description of your site
-description: A virtual proof that I'm awesome
+description: M.S. Candidate in Korea University.
 
 # Name of website
-title: My website
+title: Moon's Deep Talk
 google_fonts: "Nanum+Gothic:400, 700"
 
 # --- Local development options ---
@@ -20,16 +20,16 @@ baseurl: ""
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
-navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-  Author's home: "http://deanattali.com"
+# navbar-links:
+#   About Me: "aboutme"
+#   Resources:
+#     - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
+#     - Learn markdown: "http://www.markdowntutorial.com/"
+#   Author's home: "http://deanattali.com"
 
-# Image to show in the navigation bar - image must be a square (width = height)
-# Remove this parameter if you don't want an image in the navbar
-avatar: "/img/avatar-icon.png"
+# # Image to show in the navigation bar - image must be a square (width = height)
+# # Remove this parameter if you don't want an image in the navbar
+# avatar: "/img/avatar-icon.png"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
