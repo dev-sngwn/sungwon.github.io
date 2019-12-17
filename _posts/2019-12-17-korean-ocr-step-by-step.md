@@ -8,8 +8,7 @@ categories: Guide
 &nbsp;최근 한국어 OCR을 사용할 일이 생겼다. OCR 연구가 활발함은 어렴풋이 알고 있었고, 실생활에서도 몇몇 프로그램엔 이미 적용된 기술이니 수월할거라고 지레 짐작을 했는데...  
 <br>
 <center>
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/tesseract.JPG?raw=true" width="100%"><br>
-<i>네 잘 지나섰니댜7 ^^</i><br>
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/tesseract.JPG?raw=true" width="100%" alt="네 잘 지나섰니댜7 ^^"><br>
 </center>
 <br>
 &nbsp;...쉽지 않았기 때문에 꽤나 삽질을 하게 되었고, 결과적으론 <strong>NAVER CLOUD PLATFORM(이하 NCP)</strong> 을 활용하는 게 정답이었다. 하지만 네이버 측에서 제공하는 가이드가 <del>(나같은)</del> 클라우드 입문자에겐 다소 어려웠기에 보충 자료로써 본 글을 작성하고자 한다.
