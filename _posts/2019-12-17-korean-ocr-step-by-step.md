@@ -44,7 +44,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-![01_start](https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/01_start.jpg?raw=true)<br>
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/01_start.jpg?raw=true"/><br>
 <strong>[이용 신청]</strong> 클릭!<br>
 
 </center>
@@ -60,7 +60,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-![02_domain](https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/02_domain.jpg?raw=true)<br>
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/02_domain.jpg?raw=true"/><br>
 <i>적당한 도메인 명을 입력!</i>
 
 </center>
@@ -81,7 +81,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-![03_list](https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/03_list.jpg?raw=true)
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/03_list.jpg?raw=true"/>
 <strong>[Text OCR]</strong>을 클릭!
 
 </center>
@@ -92,7 +92,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-![04_config](https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/04_config.jpg?raw=true)
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/04_config.jpg?raw=true"/>
 <strong>[Text OCR]</strong>을 클릭!
 
 </center>
@@ -102,7 +102,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-![5_api](https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/5_api.jpg?raw=true)
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/5_api.jpg?raw=true"/>
 <i>생성된 Secret Key와 APIGW Invoke URL</i>
 
 </center>
@@ -118,7 +118,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-![06_form](https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/06_form.jpg?raw=true)
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/06_form.jpg?raw=true"/>
 <i><del>필자는 이걸 못 찾아서 헤멨다...</del></i>
 
 </center>
@@ -129,7 +129,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-![07_sample](https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/07_sample.jpg?raw=true)
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/07_sample.jpg?raw=true)
 <i>예시 이미지 ( 출처: <a href="https://youtu.be/k4tz_Be4uzE">유튜브 경기농아방송 </a>)</i>
 
 </center>
@@ -206,7 +206,7 @@ output:
 
 <center>
 
-![07_sample_bad](https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/07_sample_bad.jpg?raw=true)
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/07_sample_bad.jpg?raw=true"/>
 <i>예시 이미지 ( 출처: <a href="https://youtu.be/A5PVOr-m6QA">유튜브 경기농아방송 </a>)</i>
 
 </center>
