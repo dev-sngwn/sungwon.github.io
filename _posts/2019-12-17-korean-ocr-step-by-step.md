@@ -19,6 +19,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <br>
 <br>
+<br>
 
 ### 0. 우선 NCP의 회원이 되십시오!<br>
 <br>
@@ -31,4 +32,28 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 </center>
 <br>
-위 링크에서 <strong>회원가입</strong>을 진행한다. 회원가입을 마친 후, 상단의 메뉴에서 <strong>[서비스] → [AI Service] → [OCR]</strong>까지 이동한 후 본격적으로 시작!
+&nbsp;위 링크에서 해야할 일은 다음과 같다. <br>
+> 1. <strong>회원가입</strong><br>
+> 2. 상단의 메뉴에서 <strong>[서비스] → [Application Service] → [API Gateway]</strong>로 이동<br>
+> 3. <strong>API Gateway 신청</strong><br>
+까지 마치고 나면 아마 좌측에 메뉴 바가 있는 페이지로 이동이 되어 있을 것이다.
+
+상단의 메뉴에서 <strong>[서비스] → [AI Service] → [OCR]</strong>까지 이동한 후 본격적으로 시작!
+<br>
+<br>
+
+<center>
+  
+![01_start](/assets/01_start.jpg)<br>
+<strong>[이용 신청하기]</strong> 클릭!<br>
+
+</center>
+<br>
+<br>
+<br>
+
+### 1. API 신청<br>
+<br>
+
+&nbsp;위 단계를
+
