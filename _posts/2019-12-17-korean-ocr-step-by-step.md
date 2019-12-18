@@ -173,8 +173,9 @@ data = json.dumps(data)
 response = requests.post(URL, data=data, headers=headers)
 res = json.loads(response.text)
 ~~~
+<br>
 
-~~~json
+~~~javascript
 output:
 {
   'version': 'V1',
@@ -213,7 +214,7 @@ output:
 <br>
 
 &nbsp;직관적으로도 자막이 아닌 화면 속 글씨를 읽어올 것 같은 느낌이 오는데,
-~~~json
+~~~javascript
 output:
 {
   'version': 'V1',
