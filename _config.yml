@@ -12,7 +12,7 @@ google_fonts: "Nanum+Gothic:400, 700"
 # *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
 
 # url is the the website domain URL without a trailing slash
-url: "https://sungwon.github.io"
+url: "https://dev-sngwn.github.io"
 
 # baseurl should be an empty string
 baseurl: ""
@@ -94,7 +94,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "sungwon.github.io"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "dev-sngwn.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
