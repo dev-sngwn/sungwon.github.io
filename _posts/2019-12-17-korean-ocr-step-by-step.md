@@ -1,19 +1,19 @@
 ---
 layout: post
-title: 한국어 OCR 해내기 (With Naver Cloud Platform) 1편 (edit)
+title: 한국어 OCR 해내기 (With Naver Cloud Platform) 1편
 subtitle: ": 가뿐하게 OCR API를 만들고 쓰는 법"
 tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 ---
 
-&nbsp;최근 한국어 OCR을 사용할 일이 생겼다. OCR 연구가 활발함은 어렴풋이 알고 있었고, 실생활에서도 몇몇 프로그램엔 이미 적용된 기술이니 수월할거라고 지레 짐작을 했는데...  
+&nbsp;최근 한국어 OCR을 사용할 일이 생겼다. OCR 연구가 활발함은 어렴풋이 알고 있었고, 실생활에서도 몇몇 프로그램엔 이미 적용된 기술이니 수월할 거라고 지레 짐작을 했는데...  
 <br>
 <center>
 <img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/tesseract.JPG?raw=true" width="100%"/><br>
 <i>네 잘 지나섰니댜7 ^^</i><br>
 </center>
 <br>
-&nbsp;쉽지 않았기 때문에 꽤나 삽질을 하게 되었고, 결과적으론 <strong>NAVER CLOUD PLATFORM(이하 NCP)</strong> 을 활용하는 게 정답이었다. 하지만 네이버 측에서 제공하는 가이드가 <del>(나같은)</del> 클라우드 입문자에겐 다소 어려웠기에 보충 자료로써 본 글을 작성하고자 한다.
-<br>
+&nbsp;쉽지 않았기 때문에 꽤나 삽질을 하게 되었고, 결과적으론 <strong>NAVER CLOUD PLATFORM(이하 NCP)</strong> 을 활용하는 게 정답이었다. 하지만 네이버 측에서 제공하는 가이드가 <del>(나 같은)</del> 클라우드 입문자에겐 다소 어려웠기에 보충 자료로써 본 글을 작성하고자 한다.
+<br> 
 <br>
 &nbsp;<strong>1편</strong>에서는 쉽고 빠르게 사용할 수 있는 <strong>General OCR</strong>을 다루고, <strong>2편</strong>에서는 OCR 영역을 지정해 템플릿화해서 사용할 수 있는 <strong>Template OCR</strong>을 다룰 것이다.
 
@@ -32,7 +32,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 </center>
 <br>
-&nbsp;위 링크에서 해야할 일은 다음과 같다. <br>
+&nbsp;위 링크에서 해야 할 일은 다음과 같다. <br>
 
 >1\) <strong>회원가입</strong><br>
 >2\) 상단의 메뉴에서 <strong>[서비스] → [Application Service] → [API Gateway]</strong>로 이동<br>
@@ -65,7 +65,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 
-&nbsp;필자는 뉴스 캡쳐에서 자막을 긁어오는 OCR API를 만들고자 하므로 도메인 이름을 <i>News_OCR</i>이라고 명명했다. 각자 적당한 도메인 이름을 지어 준 후, 1편에서는 General OCR을 다루기로 했으므로 서비스 타입은 General로 체크해준다.<br>
+&nbsp;필자는 뉴스 캡처에서 자막을 긁어오는 OCR API를 만들고자 하므로 도메인 이름을 <i>News_OCR</i>이라고 명명했다. 각자 적당한 도메인 이름을 지어 준 후, 1편에서는 General OCR을 다루기로 했으므로 서비스 타입은 General로 체크해준다.<br>
 &nbsp;간단히 General과 Template의 차이를 언급하면 다음과 같다.
 
 > <strong>General</strong>: Input 이미지에 포함된 <strong>모든 문자를 반환</strong><br>
@@ -122,7 +122,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 
-&nbsp;우리에게 중요한 것은 <i>image</i> 필드, 그 중에서도 <i>image.data</i> 이다. <del>(나머지는 이름만 봐도 대충 느낌이 온다)</del> Description을 읽어보면 <strong>base64로 인코딩된 이미지 바이트</strong>를 요구하고 있다.
+&nbsp;우리에게 중요한 것은 <i>image</i> 필드, 그중에서도 <i>image.data</i> 이다. <del>(나머지는 이름만 봐도 대충 느낌이 온다)</del> Description을 읽어보면 <strong>base64로 인코딩된 이미지 바이트</strong>를 요구하고 있다.
 <br>
 
 <center>
@@ -133,7 +133,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 
-&nbsp;뉴스 캡쳐에서 자막을 긁어오는 것이 목표이므로, 샘플 뉴스 이미지를 준비했다. 본 이미지를 우리가 만든 API에게 보내 OCR을 잘 해내는지 확인해보겠다.
+&nbsp;뉴스 캡쳐에서 자막을 긁어오는 것이 목표이므로, 샘플 뉴스 이미지를 준비했다. 본 이미지를 우리가 만든 API에게 보내 OCR을 잘 해내는지 확인해보겠다. 기대되는 결과는 <strong>"올해의 액운을 막고 건겅과 풍년을 기원하였습니다."</strong>이다.
 <br>
 
 ~~~python
@@ -199,7 +199,7 @@ output:
 }
 ~~~
 
-&nbsp;서론의 망한 케이스를 기억한다면 이는 실로 놀라운 정확도다! 다만 문제될 부분이 보인다면 <i>GGDEAF NEWS</i>를 둘로 갈라놓은 데다가 심지어 붙어있지도 않다는 것이다<del>(예컨대 위에서부터 차례차례 인식해 Append하는 방식일 것)</del>. 이는 꽤 큰 문제를 야기할 수 있는데, 예를 들어 아래와 같은 이미지를 OCR 한다고 생각해보자.
+&nbsp;서론의 망한 케이스를 기억한다면 이는 실로 놀라운 정확도다(심지어 오타까지 정확하게)! 다만 문제 될 부분이 보인다면 <i>GGDEAF NEWS</i>를 둘로 갈라놓은 데다가 심지어 붙어있지도 않다는 것이다<del>(예컨대 위에서부터 차례차례 인식해 Append 하는 방식일 것)</del>. 이는 꽤 큰 문제를 야기할 수 있는데, 예를 들어 아래와 같은 이미지를 OCR 한다고 생각해보자.
 
 <br>
 
