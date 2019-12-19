@@ -97,7 +97,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-2/07_template_list_ie7aui5di.png"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-2/07_template_list.png"/>
 
 </center>
 &nbsp;저장 후, 좌측 메뉴의 <strong>[템플릿 목록]</strong>을 확인해보면 방금 만든 템플릿이 저장되어 있는 것을 볼 수 있다. 이 때 <strong>템플릿 ID</strong>은 후에 사용되므로 기억해 두도록 하자.
