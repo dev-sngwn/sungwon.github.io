@@ -74,7 +74,6 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 > <strong>대표 샘플</strong>: API가 완성된 후, OCR 결과는 <code>{"title": {"title name": "title result"}, "field": ["field name": "field result", ...]}</code> 와 같이 응답된다. 이 때 <code>title result</code>를 지정 해주는 과정으로 <strong>결과 분류</strong>에 사용될 수 있다.
 
-<br>
 
 &nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>GGDEAF NEWS</i> 영역을 대표 샘플 영역으로 지정하면 <code>title result</code>가 <i>"GGDEAF NEWS"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외시킬 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 뉴스 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
 <br>
@@ -95,7 +94,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-2/07_template_list.png"/>
 
 </center>
-&nbsp;저장 후, 좌측 메뉴의 <strong>[템플릿 목록]</strong>을 확인해보면 방금 만든 템플릿이 저장되어 있는 것을 볼 수 있다. 이 때 <strong>템플릿 ID</strong>은 후에 사용되므로 기억해 두도록 하자.
+&nbsp;저장 후, 좌측 메뉴의 <strong>[템플릿 목록]</strong>을 확인해보면 방금 만든 템플릿이 저장되어 있는 것을 볼 수 있다. 이 때 <strong>템플릿 ID</strong>은 후에 사용될 수 있으므로 기억해 두도록 하자(여러 개의 템플릿을 사용하는 경우).
 
 <br style="line-height:10px">
 <br style="line-height:10px">
@@ -129,7 +128,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 ### 4. API 배포
 -------------
 
-&nbsp;General OCR은 Secret Key와 APIGW Invoke URL만으로도 사용할 수 있었기에 저 페이지에서 섣불리 <i>"다했다~"</i> 를 해버릴지도 모른다. 하지만 생성된 URL로 보내보면 아래와 같은 에러를 마주할 것이다.
+&nbsp;General OCR은 <strong>Secret Key</strong>와 <strong>APIGW Invoke URL</strong>만으로도 사용할 수 있었기에 저 페이지에서 섣불리 <i>"다했다~"</i> 를 해버릴지도 모른다. 하지만 생성된 URL로 보내보면 아래와 같은 에러를 마주할 것이다.
 
 ~~~javascript
 {
@@ -181,7 +180,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 </center>
 
-&nbsp;<span style="background-color: #ddffdd"><strong>베타 테스트</strong></span>를 진행할 예정이므로 테스트 조건은 <span style="background-color: #ddffdd"><strong>베타</strong></span>로 선택하고 이미지를 업로드한 후, 테스트를 진행한다.
+&nbsp;<span style="background-color: #ddffdd"><strong>베타 테스트</strong></span>를 진행할 예정이므로 테스트 조건은 <span style="background-color: #ddffdd"><strong>베타</strong></span>로 선택. 이미지를 업로드한 후, 테스트!
 <br>
 
 <center>
@@ -192,7 +191,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 
-&nbsp;우리가 의도한 대로 <strong>지정한 영역에 대해서만 OCR</strong>을 진행함을 알 수 있다! 성공적이다! 어서 배포를 마치고 코드에서도 정상적으로 동작하는지 확인해보자. 페이지 최상단의 메뉴 바에서 <strong>[서비스 배포]</strong>를 눌러 최종 배포를 마무리 하길 바란다. 
+&nbsp;우리가 의도한 대로 <strong>지정한 영역에 대해서만 OCR</strong>을 진행함을 알 수 있다, 성공적이다! 어서 배포를 마치고 코드에서도 정상적으로 동작하는지 확인해보자. 페이지 최상단의 메뉴 바에서 <strong>[서비스 배포]</strong>를 눌러 최종 배포를 마무리 하길 바란다. 
 <br>
 
 <center>
