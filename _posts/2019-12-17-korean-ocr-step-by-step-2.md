@@ -17,7 +17,6 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 
 ### 1. 도메인 생성<br>
-<br>
 
 <center>
 
@@ -25,18 +24,15 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <i>Template 도메인 생성</i>
 
 </center>
-<br>
 
 &nbsp;General OCR을 만들 때와 동일하게 도메인을 먼저 생성한다. 서비스 타입은 <strong>Template</strong>로 선택한 후, 생성!
 
-<br>
 
 <center>
 
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-2/02_list.png"/>
 
 </center>
-<br>
 
 &nbsp;그러면 1편에서 생성한 General 도메인과 새로 만든 Template 도메인을 확인할 수 있다. <strong>[템플릿 빌더]</strong>를 눌러 템플릿 작업을 시작하도록 하자!
 
@@ -45,15 +41,12 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 ### 2. 템플릿 생성<br>
 
-<br>
-
 <center>
 
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-2/03_template_main.png"/>
 <i>생성한 도메인을 관리할 수 있다</i>
 
 </center>
-<br>
 
 &nbsp;도메인을 생성했으니 커스텀을 해 줄 차례다. 좌측에 <strong>[템플릿 목록]</strong>을 눌러 템플릿을 생성하러 가보자!
 <br>
@@ -64,7 +57,6 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <i>텅 빈 템플릿 리스트</i>
 
 </center>
-<br>
 
 &nbsp;<strong>[템플릿 생성]</strong>을 눌러 이동하면 아래와 같은 화면을 볼 수 있다.
 <br>
@@ -77,11 +69,11 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 &nbsp;이동된 화면에서 <strong>(1)템플릿 명을 입력</strong>하고 <strong>(2)샘플 이미지를 업로드</strong>하면 위와 같은 화면을 볼 수 있다. 가장 먼저 해야하는 것은 <span style="background-color: #ddddff"><strong>대표 샘플을 지정</strong></span>하는 것이다.
 
-> <strong>대표 샘플</strong>: API가 완성된 후, OCR 결과는 <code javascript>{"title": {"\<title name\>": "\<title result\>"}, "field": ["\<field name\>": "\<field result\>", ...]}</code> 와 같이 응답된다. 이 때 <code>\<title result\></code>를 지정 해주는 과정으로 <strong>결과 분류</strong>에 사용될 수 있다.
+> <strong>대표 샘플</strong>: API가 완성된 후, OCR 결과는 <code>{"title": {"<title name>": "<title result>"}, "field": ["<field name>": "<field result>", ...]}</code> 와 같이 응답된다. 이 때 <code><title result></code>를 지정 해주는 과정으로 <strong>결과 분류</strong>에 사용될 수 있다.
 
 <br>
 
-&nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>GGDEAF NEWS</i> 영역을 대표 샘플 영역으로 지정하면 <code>\<title result\></code>가 <i>"GGDEAF NEWS"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외시킬 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 뉴스 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
+&nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>GGDEAF NEWS</i> 영역을 대표 샘플 영역으로 지정하면 <code><title result></code>가 <i>"GGDEAF NEWS"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외시킬 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 뉴스 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
 <br>
 
 <center>
@@ -104,12 +96,9 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <br>
 <br>
-<br>
 
 
 ### 3. API 생성<br>
-
-<br>
 
 <center>
 
@@ -132,16 +121,10 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <br>
 <br>
-<br>
-
 
 ### 4. API 배포<br>
-<br>
 
 &nbsp;General OCR은 Secret Key와 APIGW Invoke URL만으로도 사용할 수 있었기에 저 페이지에서 섣불리 <i>"다했다~"</i> 를 해버릴지도 모른다. 하지만 생성된 URL로 보내보면 아래와 같은 에러를 마주할 것이다.
-
-
-<center>
 
 ~~~javascript
 {
@@ -151,8 +134,6 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
   'timestamp': 1576746215096
 }
 ~~~
-
-</center>
 
 &nbsp;이는 API가 배포되지 않아 발생하는 에러이다. 어서 마무리 작업을 확실히 하고 마침표를 찍도록 하자.
 <br>
@@ -234,8 +215,6 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 &nbsp;테스트 환경은 General OCR때와 동일하다, 다만 유의점이라면 여러 개의 템플릿을 사용할 경우, <code>"templateIds"</code> 컬럼을 포함해 템플릿을 지정해줘야 한다는 것. 물론 컬럼을 포함하지 않을 경우 자동으로 맞는 템플릿을 찾지만 명확하게 지정하는 것을 권장한다. 1편에서 사용한 소스를 그대로 첨부하겠다.
 
-<br>
-
 ~~~python
 import json
 import base64
@@ -302,7 +281,6 @@ res = json.loads(response.text)
  }]
 }
 ~~~
-<br>
 
 &nbsp;General OCR보다 훨씬 깔끔하게 결과가 나오는 것을 알 수 있다. 정형화된 데이터를 다루는 게 목적이라면 이보다 적합한 것은 없을 정도로... 현재 Naver Cloud Platform의 OCR Service는 무료로 제공되고 있으므로, OCR이 필요하다면 활용하는 것을 <strong>적극적으로 권장</strong>한다.
 <br>
