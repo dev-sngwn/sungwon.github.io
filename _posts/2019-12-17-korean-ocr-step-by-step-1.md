@@ -8,7 +8,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 &nbsp;최근 한국어 OCR을 사용할 일이 생겼다. OCR 연구가 활발함은 어렴풋이 알고 있었고, 실생활에서도 몇몇 프로그램엔 이미 적용된 기술이니 수월할 거라고 지레 짐작을 했는데...  
 <br>
 <center>
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/tesseract.JPG?raw=true" width="100%"/><br>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/tesseract.jpg" width="100%"/><br>
 <i>네 잘 지나섰니댜7 ^^</i><br>
 </center>
 <br>
@@ -26,7 +26,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
   
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/NCP.png?raw=true" width="40%"/><br>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/NCP.png" width="40%"/><br>
   
 <i><a href="https://www.ncloud.com/">NAVER CLOUD PLATFORM</a></i>
 
@@ -44,7 +44,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/01_start.jpg?raw=true"/><br>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/01_start.jpg"/><br>
 <strong>[이용 신청]</strong> 클릭!<br>
 
 </center>
@@ -59,7 +59,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/02_domain.jpg?raw=true"/><br>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/02_domain.jpg"/><br>
 <i>적당한 도메인 명을 입력!</i>
 
 </center>
@@ -80,7 +80,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/03_list.jpg?raw=true"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/03_list.jpg"/>
 <strong>[Text OCR]</strong>을 클릭!
 
 </center>
@@ -91,7 +91,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/04_config.jpg?raw=true"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/04_config.jpg"/>
 <strong>[Text OCR]</strong>을 클릭!
 
 </center>
@@ -101,7 +101,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/5_api.jpg?raw=true"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/05_api.jpg"/>
 <i>생성된 Secret Key와 APIGW Invoke URL</i>
 
 </center>
@@ -118,7 +118,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/06_form.jpg?raw=true"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/06_form.jpg"/>
 <i><del>필자는 이걸 못 찾아서 헤멨다...</del></i>
 
 </center>
@@ -129,7 +129,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/07_sample.jpg"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/07_sample.jpg"/>
 <i>예시 이미지 1</i>
 
 </center>
@@ -207,7 +207,7 @@ output:
 
 <center>
 
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/07_sample_bad.jpg?raw=true"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/07_sample_bad.jpg"/>
 <i>예시 이미지 2</i>
 
 </center>
