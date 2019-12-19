@@ -248,12 +248,13 @@ output:
 <br>
 <br>
 <br>
-<br>
 
 Reference
 -------------
 <a href="https://docs.ncloud.com/ko/ocr/ocr-1-1.html">Naver Cloud Platform OCR 사용 가이드</a>
+<br>
 <a href="https://www.youtube.com/channel/UCy460AveLol6g_s3GZIKRkw">유튜브 경기농아방송</a>
+<br>
 <br>
 <br>
 
