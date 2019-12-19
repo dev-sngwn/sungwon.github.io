@@ -7,8 +7,6 @@ description: 딥러닝에 관한 자잘한 이야기
 title: MDTalk
 google_fonts: "Nanum+Gothic:400, 700"
 
-
-
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
 # *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
