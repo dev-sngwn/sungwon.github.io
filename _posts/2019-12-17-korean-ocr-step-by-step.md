@@ -130,7 +130,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <center>
 
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/07_sample.jpg"/>
-<i>예시 이미지 ( 출처: <a href="https://youtu.be/k4tz_Be4uzE">유튜브 경기농아방송 </a>)</i>
+<i>예시 이미지 1</i>
 
 </center>
 <br>
@@ -208,7 +208,7 @@ output:
 <center>
 
 <img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/07_sample_bad.jpg?raw=true"/>
-<i>예시 이미지 ( 출처: <a href="https://youtu.be/A5PVOr-m6QA">유튜브 경기농아방송 </a>)</i>
+<i>예시 이미지 2</i>
 
 </center>
 <br>
@@ -246,6 +246,13 @@ output:
 
 &nbsp;역시나 적중이다. 이 현상을 방지하기 위해선 <strong>OCR을 진행할 영역을 지정</strong>해주는 것이 필요하다. 그를 위해 <strong>Template OCR</strong>이 존재한다. 다음 편에서는 Template OCR 사용법에 대해 가이드하도록 하겠다.
 <br>
+<br>
+<br>
+
+=============
+### Reference<br>
+<a href="https://docs.ncloud.com/ko/ocr/ocr-1-1.html">Naver Cloud Platform OCR 사용 가이드</a>
+<a href="https://www.youtube.com/channel/UCy460AveLol6g_s3GZIKRkw">유튜브 경기농아방송</a>
 <br>
 <br>
 
