@@ -28,7 +28,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 </center>
 
-&nbsp;General OCR을 만들 때와 동일하게 도메인을 먼저 생성한다. 서비스 타입은 <strong>Template</strong>로 선택한 후, 생성!
+&nbsp;General OCR을 만들 때와 동일하게 도메인을 먼저 생성한다. 서비스 타입은 <strong>Template</strong>로 선택!
 
 
 <center>
@@ -74,11 +74,11 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 &nbsp;이동된 화면에서 <strong>(1)템플릿 명을 입력</strong>하고 <strong>(2)샘플 이미지를 업로드</strong>하면 위와 같은 화면을 볼 수 있다. 가장 먼저 해야하는 것은 <span style="background-color: #ddddff"><strong>대표 샘플을 지정</strong></span>하는 것이다.
 
-> <strong>대표 샘플</strong>: API가 완성된 후, OCR 결과는 <code>{"title": {"<title name>": "<title result>"}, "field": ["<field name>": "<field result>", ...]}</code> 와 같이 응답된다. 이 때 <code><title result></code>를 지정 해주는 과정으로 <strong>결과 분류</strong>에 사용될 수 있다.
+> <strong>대표 샘플</strong>: API가 완성된 후, OCR 결과는 <code>{"title": {"title name": "title result"}, "field": ["field name": "field result", ...]}</code> 와 같이 응답된다. 이 때 <code>title result</code>를 지정 해주는 과정으로 <strong>결과 분류</strong>에 사용될 수 있다.
 
 <br>
 
-&nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>GGDEAF NEWS</i> 영역을 대표 샘플 영역으로 지정하면 <code><title result></code>가 <i>"GGDEAF NEWS"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외시킬 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 뉴스 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
+&nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>GGDEAF NEWS</i> 영역을 대표 샘플 영역으로 지정하면 <code>title result</code>가 <i>"GGDEAF NEWS"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외시킬 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 뉴스 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
 <br>
 
 <center>
