@@ -127,7 +127,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/07_sample_bad.jpg?raw=true)
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/07_sample_bad.jpg)
 <i>예시 이미지 ( 출처: <a href="https://youtu.be/k4tz_Be4uzE">유튜브 경기농아방송 </a>)</i>
 
 </center>
