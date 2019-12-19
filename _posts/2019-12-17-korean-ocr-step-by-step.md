@@ -74,6 +74,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 &nbsp;혹시 와닿지 않더라도 문제는 없다, 두 타입을 모두 다룰 것이고 실제 데이터를 보면 감이 확 올테니 걱정 말고 다음 스텝으로 진행하자.
 <br>
 <br>
+<br>
 
 ### 2. API 생성<br>
 
@@ -106,6 +107,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 &nbsp;<strong>Secret Key</strong>와 <strong>APIGW Invoke URL(OCR Invoke URL이 아님)</strong>이 준비되었다면 General OCR을 사용할 준비는 끝이 났다. 네이버에서 제공하는 메인 가이드는 여기까지 적혀있어 <i>"그래서 usage는 어디에..."</i> 하는 마음이 든다. Jupyter Notebook이든 PyCharm이든 본인이 사용하는 파이썬 환경으로 이동하자.
+<br>
 <br>
 <br>
 
