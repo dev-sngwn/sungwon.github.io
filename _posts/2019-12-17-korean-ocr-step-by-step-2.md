@@ -8,17 +8,17 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 이전 글:
 <a href="https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-1/">한국어 OCR 해내기 (With Naver Cloud Platform) 1편: 가뿐하게 OCR API 만들기</a>
 
-<br>
+<br style="line-height:10px">
 
 &nbsp;1편에서 쉽고 빠르게 OCR API를 만들어서 사용했지만 원치 않는 부분에 대해서도 OCR이 진행되어 결과에 노이즈가 발생하는 문제가 있었다. 2편에서는 이 문제를 해결할 수 있는 <strong>Template OCR</strong>에 대해 다룰 것이다.<br>
 
 > 모든 설명은 1편을 선행했다고 가정하니, 혹시라도 건너뛰었다면 위 링크로 이동해 <span style="background-color: #ffeeee"><strong><i>&nbsp;0. 우선 NCP의 회원이 되십시오! </i></strong></span>&nbsp;부분까지는 따라하고 오길 권장한다.
 
-<br>
-<br>
+<br style="line-height:10px">
+<br style="line-height:10px">
 
 ### 1. 도메인 생성
-&nbsp;<br>
+<br style="line-height:10px">
 
 <center>
 
@@ -38,11 +38,11 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 &nbsp;그러면 1편에서 생성한 General 도메인과 새로 만든 Template 도메인을 확인할 수 있다. <strong>[템플릿 빌더]</strong>를 눌러 템플릿 작업을 시작하도록 하자!
 
-<br>
-<br>
+<br style="line-height:10px">
+<br style="line-height:10px">
 
 ### 2. 템플릿 생성
-&nbsp;<br>
+<br style="line-height:10px">
 
 <center>
 
@@ -97,12 +97,12 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 &nbsp;저장 후, 좌측 메뉴의 <strong>[템플릿 목록]</strong>을 확인해보면 방금 만든 템플릿이 저장되어 있는 것을 볼 수 있다. 이 때 <strong>템플릿 ID</strong>은 후에 사용되므로 기억해 두도록 하자.
 
-<br>
-<br>
+<br style="line-height:10px">
+<br style="line-height:10px">
 
 
 ### 3. API 생성
-&nbsp;<br>
+<br style="line-height:10px">
 
 <center>
 
@@ -127,7 +127,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 
 ### 4. API 배포
-&nbsp;<br>
+<br style="line-height:10px">
 
 &nbsp;General OCR은 Secret Key와 APIGW Invoke URL만으로도 사용할 수 있었기에 저 페이지에서 섣불리 <i>"다했다~"</i> 를 해버릴지도 모른다. 하지만 생성된 URL로 보내보면 아래와 같은 에러를 마주할 것이다.
 
@@ -208,7 +208,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 
 ### 5. 테스트
-&nbsp;<br>
+<br style="line-height:10px">
 
 <center>
 
