@@ -18,7 +18,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br style="line-height:10px">
 
 ### 1. 도메인 생성
-<br style="line-height:10px">
+-------------
 
 <center>
 
@@ -42,7 +42,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br style="line-height:10px">
 
 ### 2. 템플릿 생성
-<br style="line-height:10px">
+-------------
 
 <center>
 
@@ -102,7 +102,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 
 ### 3. API 생성
-<br style="line-height:10px">
+-------------
 
 <center>
 
@@ -127,7 +127,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 
 ### 4. API 배포
-<br style="line-height:10px">
+-------------
 
 &nbsp;General OCR은 Secret Key와 APIGW Invoke URL만으로도 사용할 수 있었기에 저 페이지에서 섣불리 <i>"다했다~"</i> 를 해버릴지도 모른다. 하지만 생성된 URL로 보내보면 아래와 같은 에러를 마주할 것이다.
 
@@ -208,7 +208,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 
 ### 5. 테스트
-<br style="line-height:10px">
+-------------
 
 <center>
 
