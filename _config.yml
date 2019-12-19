@@ -7,6 +7,9 @@ description: 딥러닝에 관한 자잘한 이야기
 title: MDTalk
 google_fonts: "Nanum+Gothic:400, 700"
 
+disqus_url: "https://dev-sngwn.disqus.com/"
+disqus_id: "dev-sngwn"
+
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
 # *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
@@ -118,8 +121,8 @@ url-pretty: "dev-sngwn.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Comments --- #
 
-Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-disqus: "dev-sngwn"
+#Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
+#disqus: "dev-sngwn"
 
 # If you want to use JustComments fill with the API Key
 #just-comments: "ABCD-EFGH-IJKL"
