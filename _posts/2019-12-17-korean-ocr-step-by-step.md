@@ -34,8 +34,8 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 &nbsp;위 링크에서 해야할 일은 다음과 같다. <br>
 
->1\) <strong>회원가입</strong>
->2\) 상단의 메뉴에서 <strong>[서비스] → [Application Service] → [API Gateway]</strong>로 이동
+>1\) <strong>회원가입</strong><br>
+>2\) 상단의 메뉴에서 <strong>[서비스] → [Application Service] → [API Gateway]</strong>로 이동<br>
 >3\) <strong>API Gateway 신청</strong>
 
 까지 마치고 나면 아마 좌측에 메뉴가 있는 콘솔 페이지로 이동이 되어 있을 것이다.
@@ -68,7 +68,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 &nbsp;필자는 뉴스 캡쳐에서 자막을 긁어오는 OCR API를 만들고자 하므로 도메인 이름을 <i>News_OCR</i>이라고 명명했다. 각자 적당한 도메인 이름을 지어 준 후, 1편에서는 General OCR을 다루기로 했으므로 서비스 타입은 General로 체크해준다.<br>
 &nbsp;간단히 General과 Template의 차이를 언급하면 다음과 같다.
 
-> <strong>General</strong>: Input 이미지에 포함된 <strong>모든 문자를 반환</strong>
+> <strong>General</strong>: Input 이미지에 포함된 <strong>모든 문자를 반환</strong><br>
 > <strong>Template</strong>: Input 이미지에서 <strong>사용자가 지정한 영역이 포함하는 문자를 반환</strong>
 
 &nbsp;혹시 와닿지 않더라도 문제는 없다, 두 타입을 모두 다룰 것이고 실제 데이터를 보면 감이 확 올테니 걱정 말고 다음 스텝으로 진행하자.
@@ -127,7 +127,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/07_sample.jpg?raw=true)
+<img src="https://github.com/mmsw0324/mmsw0324.github.io/blob/master/_posts/assets/07_sample_bad.jpg?raw=true)
 <i>예시 이미지 ( 출처: <a href="https://youtu.be/k4tz_Be4uzE">유튜브 경기농아방송 </a>)</i>
 
 </center>
