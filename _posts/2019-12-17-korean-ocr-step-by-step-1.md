@@ -21,8 +21,8 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 <br>
 
-### 0. 우선 NCP의 회원이 되십시오!<br>
-<br>
+### 0. 우선 NCP의 회원이 되십시오!
+-------------
 
 <center>
   
@@ -51,7 +51,8 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 <br>
 
-### 1. 도메인 생성<br>
+### 1. 도메인 생성
+-------------
 
 &nbsp;위 단계를 성공적으로 마치고 나면 <del>(실패하기엔 너무 간단하지만)</del> 아래와 같이 <strong>도메인 생성 창</strong>이 나타날 것이다.
 
@@ -76,7 +77,8 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 <br>
 
-### 2. API 생성<br>
+### 2. API 생성
+-------------
 
 <center>
 
@@ -111,7 +113,8 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 <br>
 
-### 3. API 사용<br>
+### 3. API 사용
+-------------
 
 &nbsp;설명서의 <i><a href="https://docs.ncloud.com/ko/ocr/ocr-1-3.html">OCR Custom API Spec.</a></i>을 잘 읽어보면 API가 요구하는 Request의 형태가 적혀 있다.
 <br>
