@@ -248,6 +248,7 @@ output:
 ~~~
 
 &nbsp;역시나 적중이다. 이 현상을 방지하기 위해선 <strong>OCR을 진행할 영역을 지정</strong>해주는 것이 필요하다. 그를 위해 <strong>Template OCR</strong>이 존재한다. <a href="https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-2/">다음 편</a>에서는 Template OCR 사용법에 대해 가이드하도록 하겠다.<br>
+<br>
 <a href="https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-2/">한국어 OCR 해내기 (With Naver Cloud Platform) 2편: 입맛대로 커스텀한 OCR 만들기</a>
 <br>
 <br>
