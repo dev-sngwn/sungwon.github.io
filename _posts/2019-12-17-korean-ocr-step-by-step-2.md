@@ -9,6 +9,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <a href="https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-1/">한국어 OCR 해내기 (With Naver Cloud Platform) 1편: 가뿐하게 OCR API 만들기</a>
 
 <br>
+
 &nbsp;1편에서 쉽고 빠르게 OCR API를 만들어서 사용했지만 원치 않는 부분에 대해서도 OCR이 진행되어 결과에 노이즈가 발생하는 문제가 있었다. 2편에서는 이 문제를 해결할 수 있는 <strong>Template OCR</strong>에 대해 다룰 것이다.<br>
 
 > 모든 설명은 1편을 선행했다고 가정하니, 혹시라도 건너뛰었다면 위 링크로 이동해 <span style="background-color: #ffeeee"><strong><i>&nbsp;0. 우선 NCP의 회원이 되십시오! </i></strong></span>&nbsp;부분까지는 따라하고 오길 권장한다.
