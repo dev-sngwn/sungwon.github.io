@@ -204,8 +204,6 @@ output:
 
 &nbsp;서론의 망한 케이스를 기억한다면 이는 실로 놀라운 정확도다! 다만 문장을 죄다 쪼개놓으니 처리하기가 다소 번거로워 보인다. 아마 <strong>이미지 상에 존재하는 모든 글자를 OCR 하기 때문</strong>인 것 같은데, 이는 꽤 큰 문제를 야기할 수 있다. 예를 들어 아래와 같은 이미지를 OCR 한다고 생각해보자.
 
-<br>
-
 <center>
 
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/sample_bad.png"/>
