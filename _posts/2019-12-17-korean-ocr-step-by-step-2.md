@@ -73,7 +73,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 > <strong>대표 샘플</strong>: API가 완성된 후, OCR 결과는 <code>{"title": {"title name": "title result"}, "field": ["field name": "field result", ...]}</code> 와 같이 응답된다. 이 때 <code>title result</code>를 지정해주는 과정으로 <strong>결과 분류</strong>에 사용될 수 있다.
 
 
-&nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>GGDEAF NEWS</i> 영역을 대표 샘플 영역으로 지정하면 <code>title result</code>가 <i>"GGDEAF NEWS"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외할 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 뉴스 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
+&nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>비포 선라이즈</i> 영역을 대표 샘플 영역으로 지정하면 <code>title result</code>가 <i>"비포 선라이즈"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외할 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 영화 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
 <br>
 
 <center>
@@ -209,7 +209,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-2/news_sample.jpg"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-2/movie_sample.png"/>
 <i>예시 이미지</i>
 
 </center>
@@ -222,7 +222,7 @@ import json
 import base64
 import requests
 
-with open("./news_sample.png", "rb") as f:
+with open("./movie_sample.png", "rb") as f:
     img = base64.b64encode(f.read())
 
  # 본인의 APIGW Invoke URL로 치환
@@ -266,21 +266,20 @@ res = json.loads(response.text)
     'name': 'sample',
     'inferResult': 'SUCCESS',
     'message': 'SUCCESS',
-    'matchedTemplate': {'id': 400, 'name': 'News_Subtitle'},
+    'matchedTemplate': {'id': 444, 'name': 'Movie_Subtitle'},
     'title': {
-      'name': 'news_title',
-      'bounding': {'top': 914.0, 'left': 102.0, 'width': 130.0, 'height': 72.0},
-      'inferText': 'GGDEAF\nNEWS',
-      'inferConfidence': 0.9990777},
-    'fields': [{
-      'name': 'news_subtitle',
-      'bounding': {'top': 918.0, 'left': 394.0, 'width': 1286.0, 'height': 58.0},
-      'valueType': 'ALL',
-      'inferText': '수어 애니메이션과 문자로 제공하고 역사내 전광판을 통해서도',
-      'inferConfidence': 0.999621
-    }],
+      'name': 'movie_title',
+      'bounding': {'top': 45.31195, 'left': 144.9561, 'width': 189.04782, 'height': 109.76625},
+      'inferText': '비포\n선라이즈', 'inferConfidence': 0.9905509},
+   'fields': [{
+     'name': 'Movie_subtitle',
+     'bounding': {'top': 607.4006, 'left': 448.08237, 'width': 501.85226, 'height': 99.57385},
+     'valueType': 'ALL',
+     'inferText': '오늘 비엔나에 왔는데\n재밌게 놀 곳을 찾고 있어요',
+     'inferConfidence': 0.9994903
+   }],
    'validationResult': {'result': 'NO_REQUESTED'}
- }]
+  }]
 }
 ~~~
 
