@@ -13,7 +13,6 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 > 모든 설명은 1편을 선행했다고 가정하니, 혹시라도 건너뛰었다면 위 링크로 이동해 <span style="background-color: #ffeeee"><strong><i>&nbsp;0. 우선 NCP의 회원이 되십시오! </i></strong></span>&nbsp;부분까지는 따라 하고 오길 권장한다.
 
 <br style="line-height:10px">
-<br style="line-height:10px">
 
 ### 1. 도메인 생성
 -------------
