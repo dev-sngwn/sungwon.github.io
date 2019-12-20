@@ -272,7 +272,7 @@ res = json.loads(response.text)
       'bounding': {'top': 45.31195, 'left': 144.9561, 'width': 189.04782, 'height': 109.76625},
       'inferText': '비포\n선라이즈', 'inferConfidence': 0.9905509},
    'fields': [{
-     'name': 'Movie_subtitle',
+     'name': 'movie_subtitle',
      'bounding': {'top': 607.4006, 'left': 448.08237, 'width': 501.85226, 'height': 99.57385},
      'valueType': 'ALL',
      'inferText': '오늘 비엔나에 왔는데\n재밌게 놀 곳을 찾고 있어요',
