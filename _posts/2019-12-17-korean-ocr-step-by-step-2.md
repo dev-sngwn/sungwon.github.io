@@ -10,7 +10,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 &nbsp;1편에서 쉽고 빠르게 OCR API를 만들어서 사용했지만 원치 않는 부분에 대해서도 OCR이 진행되어 결과에 노이즈가 발생하는 문제가 있었다. 2편에서는 이 문제를 해결할 수 있는 <strong>Template OCR</strong>에 대해 다룰 것이다.<br>
 
-> 모든 설명은 1편을 선행했다고 가정하니, 혹시라도 건너뛰었다면 위 링크로 이동해 <span style="background-color: #ffeeee"><strong><i>&nbsp;0. 우선 NCP의 회원이 되십시오! </i></strong></span>&nbsp;부분까지는 따라하고 오길 권장한다.
+> 모든 설명은 1편을 선행했다고 가정하니, 혹시라도 건너뛰었다면 위 링크로 이동해 <span style="background-color: #ffeeee"><strong><i>&nbsp;0. 우선 NCP의 회원이 되십시오! </i></strong></span>&nbsp;부분까지는 따라 하고 오길 권장한다.
 
 <br style="line-height:10px">
 <br style="line-height:10px">
@@ -68,12 +68,12 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 </center>
 <br>
-&nbsp;이동된 화면에서 <strong>(1)템플릿 명을 입력</strong>하고 <strong>(2)샘플 이미지를 업로드</strong>하면 위와 같은 화면을 볼 수 있다. 가장 먼저 해야하는 것은 <span style="background-color: #ddddff"><strong>대표 샘플을 지정</strong></span>하는 것이다.
+&nbsp;이동된 화면에서 <strong>(1)템플릿 명을 입력</strong>하고 <strong>(2)샘플 이미지를 업로드</strong>하면 위와 같은 화면을 볼 수 있다. 가장 먼저 해야 하는 것은 <span style="background-color: #ddddff"><strong>대표 샘플을 지정</strong></span>하는 것이다.
 
-> <strong>대표 샘플</strong>: API가 완성된 후, OCR 결과는 <code>{"title": {"title name": "title result"}, "field": ["field name": "field result", ...]}</code> 와 같이 응답된다. 이 때 <code>title result</code>를 지정 해주는 과정으로 <strong>결과 분류</strong>에 사용될 수 있다.
+> <strong>대표 샘플</strong>: API가 완성된 후, OCR 결과는 <code>{"title": {"title name": "title result"}, "field": ["field name": "field result", ...]}</code> 와 같이 응답된다. 이 때 <code>title result</code>를 지정해주는 과정으로 <strong>결과 분류</strong>에 사용될 수 있다.
 
 
-&nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>GGDEAF NEWS</i> 영역을 대표 샘플 영역으로 지정하면 <code>title result</code>가 <i>"GGDEAF NEWS"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외시킬 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 뉴스 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
+&nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>GGDEAF NEWS</i> 영역을 대표 샘플 영역으로 지정하면 <code>title result</code>가 <i>"GGDEAF NEWS"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외할 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 뉴스 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
 <br>
 
 <center>
@@ -92,7 +92,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-2/07_template_list.png"/>
 
 </center>
-&nbsp;저장 후, 좌측 메뉴의 <strong>[템플릿 목록]</strong>을 확인해보면 방금 만든 템플릿이 저장되어 있는 것을 볼 수 있다. 이 때 <strong>템플릿 ID</strong>은 후에 사용될 수 있으므로 기억해 두도록 하자(여러 개의 템플릿을 사용하는 경우).
+&nbsp;저장 후, 좌측 메뉴의 <strong>[템플릿 목록]</strong>을 확인해보면 방금 만든 템플릿이 저장되어 있는 것을 볼 수 있다. 이때 <strong>템플릿 ID</strong>은 후에 사용될 수 있으므로 기억해 두도록 하자(여러 개의 템플릿을 사용하는 경우).
 
 <br style="line-height:10px">
 <br style="line-height:10px">
@@ -189,7 +189,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 
-&nbsp;우리가 의도한 대로 <strong>지정한 영역에 대해서만 OCR</strong>을 진행함을 알 수 있다, 성공적이다! 어서 배포를 마치고 코드에서도 정상적으로 동작하는지 확인해보자. 페이지 최상단의 메뉴 바에서 <strong>[서비스 배포]</strong>를 눌러 최종 배포를 마무리 하길 바란다. 
+&nbsp;우리가 의도한 대로 <strong>지정한 영역에 대해서만 OCR</strong>을 진행함을 알 수 있다, 성공적이다! 어서 배포를 마치고 코드에서도 정상적으로 동작하는지 확인해보자. 페이지 최상단의 메뉴 바에서 <strong>[서비스 배포]</strong>를 눌러 최종 배포를 마무리하길 바란다. 
 <br>
 
 <center>
@@ -215,7 +215,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 
-&nbsp;테스트 환경은 General OCR때와 동일하다, 다만 유의점이라면 여러 개의 템플릿을 사용할 경우, <code>"templateIds"</code> 컬럼을 포함해 템플릿을 지정해줘야 한다는 것. 물론 컬럼을 포함하지 않을 경우 자동으로 맞는 템플릿을 찾지만 명확하게 지정하는 것을 권장한다. 1편에서 사용한 소스를 그대로 첨부하겠다.
+&nbsp;테스트 환경은 General OCR 때와 동일하다, 다만 유의점이라면 여러 개의 템플릿을 사용할 경우, <code>"templateIds"</code> 컬럼을 포함해 템플릿을 지정해줘야 한다는 것. 물론 컬럼을 포함하지 않을 경우 자동으로 맞는 템플릿을 찾지만 명확하게 지정하는 것을 권장한다. 1편에서 사용한 소스를 그대로 첨부하겠다.
 
 ~~~python
 import json
