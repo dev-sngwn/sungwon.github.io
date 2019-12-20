@@ -132,7 +132,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 {
   'code': '1021',
   'message': 'Not Found Deploy Info',
-  'path': '/external/v1/471/abc123abc123abc123abc123abc123/infer', /*private uid obfuscated*/
+  'path': '/external/v1/488/abc123abc123abc123/infer', /*private uid obfuscated*/
   'timestamp': 1576746215096
 }
 ~~~
