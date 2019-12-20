@@ -60,13 +60,13 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/02_domain.jpg"/><br>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/02_domain.png"/><br>
 <i>적당한 도메인 명을 입력!</i>
 
 </center>
 <br>
 
-&nbsp;필자는 뉴스 캡처에서 자막을 긁어오는 OCR API를 만들고자 하므로 도메인 이름을 <i>News_OCR</i>이라고 명명했다. 각자 적당한 도메인 이름을 지어 준 후, 1편에서는 General OCR을 다루기로 했으므로 서비스 타입은 General로 체크해준다.<br>
+&nbsp;필자는 영화 캡처에서 자막을 긁어오는 OCR API를 만들고자 하므로 도메인 이름을 <i>Movie_OCR</i>이라고 명명했다. 각자 적당한 도메인 이름을 지어 준 후, 1편에서는 General OCR을 다루기로 했으므로 서비스 타입은 General로 체크해준다.<br>
 &nbsp;간단히 General과 Template의 차이를 언급하면 다음과 같다.
 
 > <strong>General</strong>: Input 이미지에 포함된 <strong>모든 문자를 반환</strong><br>
@@ -82,7 +82,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/03_list.jpg"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/03_list.png"/>
 <strong>[Text OCR]</strong>을 클릭!
 
 </center>
@@ -132,13 +132,13 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 
 <center>
 
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/07_sample.jpg"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/sample.png"/>
 <i>예시 이미지 1</i>
 
 </center>
 <br>
 
-&nbsp;뉴스 캡쳐에서 자막을 긁어오는 것이 목표이므로, 샘플 뉴스 이미지를 준비했다. 본 이미지를 우리가 만든 API에게 보내 OCR을 잘 해내는지 확인해보겠다. 기대되는 결과는 <strong>"올해의 액운을 막고 건겅과 풍년을 기원하였습니다."</strong>이다.
+&nbsp;영화 캡쳐에서 자막을 긁어오는 것이 목표이므로, 영화 <i><비포 선라이즈></i>의 한 장면을 준비했다. 본 이미지를 우리가 만든 API에게 보내 OCR을 잘 해내는지 확인해보겠다. 기대되는 결과는 <strong>"하지만 생각해보면 사랑만큼 이기적인 게 없어"</strong>이다.
 <br>
 
 ~~~python
@@ -146,7 +146,7 @@ import json
 import base64
 import requests
 
-with open("./news_sample.png", "rb") as f:
+with open("./movie_sample.png", "rb") as f:
     img = base64.b64encode(f.read())
 
  # 본인의 APIGW Invoke URL로 치환
@@ -190,33 +190,31 @@ output:
     'inferResult': 'SUCCESS',
     'message': 'SUCCESS',
     'fields': [
-      {'inferText': 'GGDEAF', 'inferConfidence': 0.99862313},
-      {'inferText': '올해의', 'inferConfidence': 0.99987835},
-      {'inferText': '액운을', 'inferConfidence': 0.99987006},
-      {'inferText': '막고', 'inferConfidence': 0.9997827},
-      {'inferText': '건겅과', 'inferConfidence': 0.9919012},
-      {'inferText': '풍년을', 'inferConfidence': 0.99932873},
-      {'inferText': '기원하였습니다.', 'inferConfidence': 0.9997941},
-      {'inferText': 'NEWS', 'inferConfidence': 0.99979496}
+      {'inferText': '하지만', 'inferConfidence': 0.99994665},
+      {'inferText': '생각해보면', 'inferConfidence': 0.99995613},
+      {'inferText': '사랑만큼', 'inferConfidence': 0.999861},
+      {'inferText': '이기적인', 'inferConfidence': 0.9999344},
+      {'inferText': '게', 'inferConfidence': 0.99965876},
+      {'inferText': '없어', 'inferConfidence': 0.99990153}
     ],
-    'validationResult': {'result': 'NO_REQUESTED'}
+   'validationResult': {'result': 'NO_REQUESTED'}
   }]
 }
 ~~~
 
-&nbsp;서론의 망한 케이스를 기억한다면 이는 실로 놀라운 정확도다(심지어 오타까지 정확하게)! 다만 문제 될 부분이 보인다면 <i>GGDEAF NEWS</i>를 둘로 갈라놓은 데다가 심지어 붙어있지도 않다는 것이다<del>(예컨대 위에서부터 차례차례 인식해 Append 하는 방식일 것)</del>. 이는 꽤 큰 문제를 야기할 수 있는데, 예를 들어 아래와 같은 이미지를 OCR 한다고 생각해보자.
+&nbsp;서론의 망한 케이스를 기억한다면 이는 실로 놀라운 정확도다! 다만 문장을 죄다 쪼개놓으니 처리하기가 다소 번거로워 보인다. 아마 이미지 상에 존재하는 모든 글자를 OCR 하기 때문인 것 같은데, 이는 꽤 큰 문제를 야기할 수 있다. 예를 들어 아래와 같은 이미지를 OCR 한다고 생각해보자.
 
 <br>
 
 <center>
 
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/07_sample_bad.jpg"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/sample_bad.png"/>
 <i>예시 이미지 2</i>
 
 </center>
 <br>
 
-&nbsp;직관적으로도 자막이 아닌 화면 속 글씨를 읽어올 것 같은 느낌이 오는데,
+&nbsp;직관적으로도 자막 뿐만 아니라 <i>"비포 선라이즈"</i> 와 <i>"4월 7일 대개봉"</i> 모두 읽어올 것 같은 느낌이 오는데,
 ~~~javascript
 output:
 {
@@ -227,24 +225,24 @@ output:
     'name': 'Sample',
     'inferResult': 'SUCCESS',
     'message': 'SUCCESS',
-    'fields': [{'inferText': 'SRT', 'inferConfidence': 0.99957913},
-     {'inferText': '알림서비스', 'inferConfidence': 0.999852},
-     {'inferText': '12:47', 'inferConfidence': 0.9997815},
-     {'inferText': '5월 20일', 'inferConfidence': 0.947222},
-     {'inferText': '分', 'inferConfidence': 0.28402498},
-     {'inferText': '현재', 'inferConfidence': 0.9984431},
-     {'inferText': '아름씨가', 'inferConfidence': 0.99971795},
-     {'inferText': '타고', 'inferConfidence': 0.99911255},
-     {'inferText': '있는', 'inferConfidence': 0.9997971},
-     {'inferText': '열차가', 'inferConfidence': 0.99986386},
-     {'inferText': 'SIT', 'inferConfidence': 0.5262649},
-     {'inferText': '달릴', 'inferConfidence': 0.56686825},
-     {'inferText': '서북', 'inferConfidence': 0.8479211},
-     {'inferText': '수서역', 'inferConfidence': 0.99913806},
-     {'inferText': '근처에서', 'inferConfidence': 0.9999334},
-     {'inferText': '화재가', 'inferConfidence': 0.9995774},
-     {'inferText': '발생했습니다', 'inferConfidence': 0.99740624},
-     ...하략
+     'fields': [
+      {'inferText': '비포', 'inferConfidence': 0.999838},
+      {'inferText': '4월', 'inferConfidence': 0.9995884},
+      {'inferText': '7일', 'inferConfidence': 0.9997598},
+      {'inferText': '대개봉', 'inferConfidence': 0.99976534},
+      {'inferText': '선라이즈', 'inferConfidence': 0.9812638},
+      {'inferText': '오늘', 'inferConfidence': 0.9999317},
+      {'inferText': '비엔나에', 'inferConfidence': 0.9986216},
+      {'inferText': '왔는데', 'inferConfidence': 0.9996365},
+      {'inferText': '재밌게', 'inferConfidence': 0.99931806},
+      {'inferText': '놀', 'inferConfidence': 0.99954},
+      {'inferText': '곳을', 'inferConfidence': 0.9995316},
+      {'inferText': '찾고', 'inferConfidence': 0.9995074},
+      {'inferText': '있어요', 'inferConfidence': 0.9998353}
+    ],
+   'validationResult': {'result': 'NO_REQUESTED'}
+  }]
+}
 ~~~
 
 &nbsp;역시나 적중이다. 이 현상을 방지하기 위해선 <strong>OCR을 진행할 영역을 지정</strong>해주는 것이 필요하다. 그를 위해 <strong>Template OCR</strong>이 존재한다. <a href="https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-2/">다음 편</a>에서는 Template OCR 사용법에 대해 가이드하도록 하겠다.<br>
@@ -257,7 +255,7 @@ output:
 Reference
 -------------
 * <a href="https://docs.ncloud.com/ko/ocr/ocr-1-1.html">Naver Cloud Platform OCR 사용 가이드</a>
-* <a href="https://www.youtube.com/channel/UCy460AveLol6g_s3GZIKRkw">유튜브 경기농아방송</a>
+* <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=17773">영화 <비포 선라이즈></a>
 <br>
 <br>
 <br>
