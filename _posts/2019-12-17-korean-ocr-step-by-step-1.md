@@ -138,7 +138,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 
-&nbsp;영화 캡쳐에서 자막을 긁어오는 것이 목표이므로, 영화 <i>\<비포 선라이즈\></i>의 한 장면을 준비했다. 본 이미지를 우리가 만든 API에게 보내 OCR을 잘 해내는지 확인해보겠다. 기대되는 결과는 <strong>"하지만 생각해보면 사랑만큼 이기적인 게 없어"</strong>이다.
+&nbsp;영화 캡처에서 자막을 긁어오는 것이 목표이므로, 영화 <i>\<비포 선라이즈\></i>의 한 장면을 준비했다. 본 이미지를 우리가 만든 API에게 보내 OCR을 잘 해내는지 확인해보겠다. 기대되는 결과는 <strong>"하지만 생각해보면 사랑만큼 이기적인 게 없어"</strong>이다.
 <br>
 
 ~~~python
