@@ -8,8 +8,8 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 &nbsp;최근 한국어 OCR을 사용할 일이 생겼다. OCR 연구가 활발함은 어렴풋이 알고 있었고, 실생활에서도 몇몇 프로그램엔 이미 적용된 기술이니 수월할 거라고 지레 짐작을 했는데...  
 <br>
 <center>
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/tesseract.jpg" width="100%"/><br>
-<i>네 잘 지나섰니댜7 ^^</i><br>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/tesseract.png" width="100%"/><br>
+<i>생틈 꺾 사랗만큼 쌤바뺄 와아아오아아유융앙</i><br>
 </center>
 <br>
 &nbsp;쉽지 않았기 때문에 꽤나 삽질을 하게 되었고, 결과적으론 <strong>NAVER CLOUD PLATFORM</strong> 을 활용하는 게 정답이었다. 하지만 네이버 측에서 제공하는 가이드가 <del>(나 같은)</del> 클라우드 입문자에겐 다소 어려웠기에 보충 자료로써 본 글을 작성하고자 한다.
