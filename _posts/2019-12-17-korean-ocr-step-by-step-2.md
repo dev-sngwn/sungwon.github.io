@@ -73,7 +73,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 > <strong>대표 샘플</strong>: API가 완성된 후, OCR 결과는 <code>{"title": {"title name": "title result"}, "field": ["field name": "field result", ...]}</code> 와 같이 응답된다. 이 때 <code>title result</code>를 지정해주는 과정으로 <strong>결과 분류</strong>에 사용될 수 있다.
 
 
-&nbsp;이를테면 위의 이미지에서 좌측 하단의 <i>비포 선라이즈</i> 영역을 대표 샘플 영역으로 지정하면 <code>title result</code>가 <i>"비포 선라이즈"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외할 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 영화 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
+&nbsp;이를테면 위의 이미지에서 좌측 상단의 <i>비포 선라이즈</i> 영역을 대표 샘플 영역으로 지정하면 <code>title result</code>가 <i>"비포 선라이즈"</i>가 아닐 경우 <span style="background-color: #ffdddd"><strong>템플릿에 어긋나는 형태</strong></span>라고 판단하여 제외할 수 있다는 것이다. 설명한 영역을 대표 샘플 영역으로 지정하고, 영화 자막 영역을 <i>subtitle</i> 영역으로 지정하도록 하겠다.
 <br>
 
 <center>
