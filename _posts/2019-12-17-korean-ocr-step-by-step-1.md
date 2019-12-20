@@ -138,7 +138,7 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 
-&nbsp;영화 캡쳐에서 자막을 긁어오는 것이 목표이므로, 영화 <i><비포 선라이즈></i>의 한 장면을 준비했다. 본 이미지를 우리가 만든 API에게 보내 OCR을 잘 해내는지 확인해보겠다. 기대되는 결과는 <strong>"하지만 생각해보면 사랑만큼 이기적인 게 없어"</strong>이다.
+&nbsp;영화 캡쳐에서 자막을 긁어오는 것이 목표이므로, 영화 <i>\<비포 선라이즈\></i>의 한 장면을 준비했다. 본 이미지를 우리가 만든 API에게 보내 OCR을 잘 해내는지 확인해보겠다. 기대되는 결과는 <strong>"하지만 생각해보면 사랑만큼 이기적인 게 없어"</strong>이다.
 <br>
 
 ~~~python
@@ -202,7 +202,7 @@ output:
 }
 ~~~
 
-&nbsp;서론의 망한 케이스를 기억한다면 이는 실로 놀라운 정확도다! 다만 문장을 죄다 쪼개놓으니 처리하기가 다소 번거로워 보인다. 아마 이미지 상에 존재하는 모든 글자를 OCR 하기 때문인 것 같은데, 이는 꽤 큰 문제를 야기할 수 있다. 예를 들어 아래와 같은 이미지를 OCR 한다고 생각해보자.
+&nbsp;서론의 망한 케이스를 기억한다면 이는 실로 놀라운 정확도다! 다만 문장을 죄다 쪼개놓으니 처리하기가 다소 번거로워 보인다. 아마 <strong>이미지 상에 존재하는 모든 글자를 OCR 하기 때문</strong>인 것 같은데, 이는 꽤 큰 문제를 야기할 수 있다. 예를 들어 아래와 같은 이미지를 OCR 한다고 생각해보자.
 
 <br>
 
@@ -212,7 +212,6 @@ output:
 <i>예시 이미지 2</i>
 
 </center>
-<br>
 
 &nbsp;직관적으로도 자막 뿐만 아니라 <i>"비포 선라이즈"</i> 와 <i>"4월 7일 대개봉"</i> 모두 읽어올 것 같은 느낌이 오는데,
 ~~~javascript
@@ -255,7 +254,7 @@ output:
 Reference
 -------------
 * <a href="https://docs.ncloud.com/ko/ocr/ocr-1-1.html">Naver Cloud Platform OCR 사용 가이드</a>
-* <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=17773">영화 <비포 선라이즈></a>
+* <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=17773">영화 \<비포 선라이즈\></a>
 <br>
 <br>
 <br>
