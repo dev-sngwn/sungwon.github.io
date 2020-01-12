@@ -7,15 +7,13 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 
 
 &nbsp;[paperswithcode](https://paperswithcode.com/)는 머신러닝의 거의 모든 Task에 대해 오픈된 Dataset을 소개하고 각 Dataset에서 <i>State-of-the-Art</i> 를 달성한 방법론을 <strong>논문과 소스로 묶어서 소개</strong>하는 사이트다. 관심 있는 Task는 종종 확인하며 트렌드를 쫓으면 좋은데, 최근 Machine Translation Task를 확인했다가 처음 보는 개념(Back Translation)이 있어 해당 논문을 읽고 정리를 하고자 한다.<br>
-<br>
 
 > 본 글은 <br>[\<Improving Neural Machine Translation Models with Monolingual Data\>](https://arxiv.org/pdf/1511.06709.pdf) 논문과 <br>[\<Understanding Back-Translation at Scale\>](https://arxiv.org/pdf/1808.09381.pdf) 논문을 참고하여 작성되었습니다.
 
 <br>
-<br>
+
 ### 0. Intro
 -------------------
-<br>
 &nbsp;Back Translation이란 개념이 처음 소개된 것은 2016년 ACL에서였다. [\<Improving Neural Machine Translation Models with Monolingual Data\>](https://arxiv.org/pdf/1511.06709.pdf) 논문은 단일 언어 데이터(이하 단일 데이터)로 기계 번역의 유창성을 높이고자 하였다.<br>
 <br>
 
@@ -25,11 +23,12 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 &nbsp; 기본적으로 기계 번역 모델은 Encoder-Decoder 구조를 이루며 <i>Sourece Sentence</i>가 Encoder에 입력되고, <i>Target Sentence</i>가 Decoder에 입력되며 훈련을 진행한다. 고로 두 문장이 한 쌍을 이루는 병렬 데이터가 불가피하다. 헌데 단일 데이터만으로 훈련을 하겠다니? 잘 상상이 가지 않는다. 저자들은 두 가지 방법을 제안했다.<br>
 <br>
 <br>
+
 ### 1-1. Dummy Source Sentence
 ------------
+&nbsp; 첫 번째 방법은 Encoder의 입력으로 <i>Dummy</i> 값을 주는 것이다. 저자들은 <i><code>null</code></i> 토큰을 생성하여 <i>Target Sentence</i>의 <strong>단일 데이터와 한 쌍</strong>을 이루게끔 하였다. 그리고 Encoder의 모든 Parameter은 Freeze하여 <i>Dummy</i> 값에 대한 학습은 일절 이루어지지 않도록 하였다.<br>
 <br>
-&nbsp; 첫 번째 방법은 Encoder의 입력으로 <i>Dummy</i> 값을 주는 것이다. 저자들은 <i><code>\<null\></code></i> 토큰을 생성하여 <i>Target Sentence</i>의 <strong>단일 데이터와 한 쌍</strong>을 이루게끔 하였다. 그리고 Encoder의 모든 Parameter은 Freeze하여 <i>Dummy</i> 값에 대한 학습은 일절 이루어지지 않도록 하였다.<br>
-<br>
+
 <center>
 [Dummy Parallel Sentence & Freezed Encoder Decoder Image]
 </center>
@@ -39,15 +38,13 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 <br>
 ### 1-2. Synthetic Source Sentence (Back Translation)
 -----------
-<br>
 <center>
 [Synthetic Source Sentence Encoder Decoder Image]
 </center>
 <br>
-&nbsp;아무런 정보도 담고 있지 않은 <i><code>\<null\></code></i> 토큰을 입력으로 주느니, 완벽하지는 않더라도 <i>Target Sentence</i>를 보고 인공적인 <i>Source Sentence</i>를 만드는 방법론이다. 생성된 인공 데이터를 <i>Synthetic Source Sentence</i>라 칭한다. 그리고 인공 데이터를 생성하는 과정을 <span style="background-color: #eeeeff"><strong>Back Translation</strong></span>이라 정의하며, 그 과정을 다음과 같이 표현하고 있다.
+&nbsp;아무런 정보도 담고 있지 않은 <i><code>null</code></i> 토큰을 입력으로 주느니, 완벽하지는 않더라도 <i>Target Sentence</i>를 보고 인공적인 <i>Source Sentence</i>를 만드는 방법론이다. 생성된 인공 데이터를 <i>Synthetic Source Sentence</i>라 칭한다. 그리고 인공 데이터를 생성하는 과정을 <span style="background-color: #eeeeff"><strong>Back Translation</strong></span>이라 정의하며, 그 과정을 다음과 같이 표현하고 있다.
 
 > i.e. an automatic translation of the monolingual target text into the source language.<br>
->
 > (즉, 단일 타겟 언어 문장을 소스 언어 문장으로 자동 번역하는 과정이다.)
 
 &nbsp;<i>다수의 독자들은 이 방법이 정말 유용한지에 대해 의심할 것이라 생각한다 <del>(본인이 그랬기 때문에)</del>. 하지만 놀랍게도 인공적으로 생성된 데이터가 엉성할 수록 성능이 높아진다는 연구 결과가 있다. 이에 대해선 (part)에서 후술하도록 하겠다.</i><br>
@@ -58,7 +55,6 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 
 ### 2. Understanding Back-Translation at Scale
 -----------
-<br>
 &nbsp;앞서 말했 듯이 Back Translation을 소개한 논문에는 다소 경험적으로 보이는 부분이 있었다. 즉, 분석이 부족했다. 이에 <span style="background-color: #eeeeff"><strong>Back Translation</strong></span>을 자세히 분석하려는 시도가 있었고, 해당 논문은 2018년 EMLNP에서 소개되었다. 무려 <strong>Facebook</strong>과 <strong>Google</strong>의 합작품인 [\<Understanding Back-Translation at Scale\>](https://arxiv.org/pdf/1808.09381.pdf)이다.<br>
 <br>
 &nbsp;저자들은 무려 <span style="background-color: #ffffee"><strong>6가지의 환경을 가정</strong></span>하고 실험을 진행했다.<br>
@@ -72,7 +68,6 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 <br>
 #### 1, 2) Synthetic Data Generation Methods & Analysis
 ----------------------
-<br>
 &nbsp;앞선 연구에서는 인공 데이터를 생성하는 데에 <i>Greedy Decoding</i>과 <i>Beam Search</i>를 사용했다. 저 두 방법은 모두 MAP(Maximum A-Posteriori)를 사용하며 <strong>가장 높은 확률을 갖는 데이터</strong>를 생성하게 된다. 저자들은 두 방법 외에 <strong>Non-MAP</strong> 방법을 비교해보고자 하였다. Non-MAP 방법으론 <i>Random Sampling</i>과 <i>Top-10 Sampling</i>, <i>Noise를 추가한 Beam Search (이하 Noise Beam)</i>이 있다.<br>
 <br>
 &nbsp;각 방법에 대한 간단한 설명과 예문을 첨부한다.
@@ -116,14 +111,35 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 <br>
 #### 3)  Low Resource vs. High Resource
 ---------------------
-<br>
 &nbsp;앞서 진행한 실험은 500만 개에서 2,900만 개까지의 데이터에서 진행했기 때문에 어쩌면 객관성이 떨어질 수도 있다. 왜냐면 저 정도의 병렬 데이터는 그럴 듯한 번역기를 만들기에 충분해서, <i>Random Sampling</i>조차도 이상적인 확률 분포에서 이루어졌을 수 있지 않은가? 그렇기 때문에 저자들은 병렬 데이터 수를 줄여가며 실험을 진행했고, 그 환경을 <strong>Low Resource</strong>라 칭하였다.<br>
 <br>
-
 <center>
 [Low Resource Graph]
 </center>
-</br>
-&nbsp;위 그래프는 8만 개까지 줄여가며 실험을 진행한 그래프이다. <span style="background-color: #ffdddd"><strong>붉은 그래프</strong></span>가 <i>Sampling</i>이고, <span style="background-color: #ddddff"><strong>푸른 그래프</strong></span>가 <i>Beam</i>이다. <br>
-&nbsp;결과는 한 눈에 들어오는 편이다. <strong>적어도 <i>64만 개 이상의 병렬 데이터</i> 를 가지고 있을 때, Sampling이 효과를 보기 시작한다</strong>. 추가로, <strong>Back Translation 자체는 모든 경우에서 효과적이다</strong>. 이 쯤에서 우린 번역 모델을 모두 구성하고, 모든 트레이닝을 마친 후 쓸 수 있는 히든 카드를 얻은 셈이다 <del>(중복 할인되는 쿠폰만큼이나 든든하다)</del>. Back Translation을 활용하기 위함이었다면 글을 여기까지만 읽어도 무방하다.
+<br>
+&nbsp;위 그래프는 병렬 데이터를 8만 개까지 줄여가며 실험을 진행한 결과이다. <span style="color: #aa3333"><strong>붉은 선</strong></span>이 <i>Sampling</i>이고, <span style="color: #3333aa"><strong>푸른 선</strong></span>이 <i>Beam</i>. 결과는 한 눈에 들어오는 편이다. <strong>적어도 <i>64만 개 이상의 병렬 데이터</i> 를 가지고 있을 때, Sampling이 효과를 보기 시작한다</strong>. 추가로, <strong>Back Translation 자체는 모든 경우에서 효과적이다</strong>. 이 쯤에서 우린 번역 모델을 완성하고, 모든 훈련을 마친 후 쓸 수 있는 히든 카드를 얻은 셈이다 <del>(중복 할인되는 쿠폰만큼이나 든든하다)</del>.<br>
+<br>
+<br>
+#### 4) Domain of Synthetic Data
+---------------------
+&nbsp;Back Translation은 적당한 양의 병렬 데이터만 있으면 활용이 가능하다. 단일 데이터는 모으고자 하면 얼마든지 모을 수 있다. 오픈된 말뭉치 데이터를 써도 좋고, 웹을 크롤링할 수도 있고, 심지어 직접 타이핑을 해도 무방하다. 이 때, <strong>단일 데이터의 출처(도메인)와 번역기의 성능은 연관이 있는가?</strong> 다시 말해, <strong>소설책으로 학습해도 뉴스에서 쓰일 수 있는가?</strong><br>
+<br>
+<center>
+[newstest 2014 Graph]
+</center>
+<br>
+&nbsp;위 그래프는 <i>WMT</i>의 평가 데이터셋인 <i>newstest</i>로 실험을 진행한 결과이다. 이름에 명시되어 있듯이 뉴스에서 크롤링한 병렬 데이터이다. <span style="color: #aa7733"><strong>갈색 선</strong></span>이 <strong>뉴스 데이터로 Back Translation</strong>한 결과, <span style="color: #aa3333"><strong>붉은 선</strong></span>이 <strong>일반적인 데이터(정확히는 병렬 데이터의 일부)로 Back Translation</strong>한 결과, <span style="color: #3333aa"><strong>푸른 선</strong></span>이 <strong>그냥 병렬 데이터</strong>로 학습한 결과이다.<br>
+<br>
+&nbsp;특정 구간에서는 <strong>Back Translation이 실제 데이터를 능가</strong>하기도 한다! 물론 <span style="color: #aa3333"><strong>붉은 선</strong></span>은 성능이 떨어지는 걸로 보아 <strong>뉴스에 한정적임</strong>을 직감할 수 있다. <i>어느 분야에서나 그렇겠지만 도메인 의존적인 것은 지양해야 한다. 결국 목적은 실제 세상에 적용하고자 함이니, 온실 속 화초는 시들기 마련 아니겠는가?</i> 고로 저자들은 온실 속 화초를 야생에 내놓았다.<br>
+<br>
+<center>
+[Valid mix Graph]
+</center>
+<br>
+&nbsp;위 그래프는 여러가지 도메인을 섞은 데이터셋으로 실험을 진행한 결과이다. 뉴스에서 강건했던 <span style="color: #aa7733"><strong>갈색 선</strong></span>은 맥 없이 고꾸라지고 말았다. 대신 이 부분에선 첫 실험에서 <i>가려져 있던 빛나는 결과</i>를 볼 수 있다. 이전 실험도 그렇고 <span style="color: #aa3333"><strong>붉은 선</strong></span>이 <span style="color: #3333aa"><strong>푸른 선</strong></span>에 비해 성능이 크게 뒤쳐지지 않는다. 그 말은 곧, <span style="background-color: #eeffee"><strong>64만 개의 병렬 데이터만 확보된다면 500만 개가 있을 때의 성능을 유사하게 만들어 낼 수 있다는 것</strong></span>이다! 데이터가 적어 중도 포기한 번역 모델이 있다면, 오랜만에 다시 살펴보도록 하자.<br>
+<br>
+<br>
+#### 5) Upsampling the Bitext
+---------------------
+&nbsp;
 
