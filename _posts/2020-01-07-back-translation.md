@@ -5,12 +5,11 @@ subtitle: ": 번역기 성능 영혼까지 끌어모으기"
 tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 ---
 
-## Back Translation 정리
 
 &nbsp;[paperswithcode](https://paperswithcode.com/)는 머신러닝의 거의 모든 Task에 대해 오픈된 Dataset을 소개하고 각 Dataset에서 <i>State-of-the-Art</i> 를 달성한 방법론을 <strong>논문과 소스로 묶어서 소개</strong>하는 사이트다. 관심 있는 Task는 종종 확인하며 트렌드를 쫓으면 좋은데, 최근 Machine Translation Task를 확인했다가 처음 보는 개념(Back Translation)이 있어 해당 논문을 읽고 정리를 하고자 한다.<br>
 <br>
 
-> 본 글은 <br>[\<Improving Neural Machine Translation Models with Monolingual Data\> (ACL 2016)](https://arxiv.org/pdf/1511.06709.pdf) 논문과 <br>[\<Understanding Back-Translation at Scale\> (EMNLP 2018)](https://arxiv.org/pdf/1808.09381.pdf) 논문을 참고하여 작성되었습니다.
+> 본 글은 <br>[\<Improving Neural Machine Translation Models with Monolingual Data\>](https://arxiv.org/pdf/1511.06709.pdf) 논문과 <br>[\<Understanding Back-Translation at Scale\>](https://arxiv.org/pdf/1808.09381.pdf) 논문을 참고하여 작성되었습니다.
 
 <br>
 <br>
@@ -120,6 +119,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 <br>
 &nbsp;앞서 진행한 실험은 500만 개에서 2,900만 개까지의 데이터에서 진행했기 때문에 어쩌면 객관성이 떨어질 수도 있다. 왜냐면 저 정도의 병렬 데이터는 그럴 듯한 번역기를 만들기에 충분해서, <i>Random Sampling</i>조차도 이상적인 확률 분포에서 이루어졌을 수 있지 않은가? 그렇기 때문에 저자들은 병렬 데이터 수를 줄여가며 실험을 진행했고, 그 환경을 <strong>Low Resource</strong>라 칭하였다.<br>
 <br>
+
 <center>
 [Low Resource Graph]
 </center>
