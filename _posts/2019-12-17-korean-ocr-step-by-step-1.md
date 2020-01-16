@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 한국어 OCR 해내기 (With Naver Cloud Platform) 1편
-subtitle: ": 가뿐하게 OCR API를 만들고 쓰는 법"
+subtitle: ": 가뿐하게 OCR API를 만들고 쓰기"
 tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 ---
 
@@ -25,9 +25,8 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 -------------
 
 <center>
-  
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/NCP.png" width="40%"/><br>
-  
+
 <i><a href="https://www.ncloud.com/">NAVER CLOUD PLATFORM</a></i>
 
 </center>
@@ -43,7 +42,6 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 
 <center>
-
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/01_start.jpg"/><br>
 <strong>[이용 신청]</strong> 클릭!<br>
 
@@ -59,7 +57,6 @@ tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 
 <center>
-
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2019-12-17-korean-ocr-step-by-step-1/02_domain.png"/><br>
 <i>적당한 도메인 명을 입력!</i>
 
@@ -277,4 +274,3 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            

@@ -5,6 +5,7 @@ subtitle: ": 번역기 성능 영혼까지 끌어모으기"
 tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 ---
 <br>
+
 <center>
 
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-07-back-translation/01_sota.png" width="100%"/><br>
@@ -33,6 +34,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 &nbsp; 기본적으로 기계 번역 모델은 Encoder-Decoder 구조를 이루며 <i>Sourece Sentence</i>가 Encoder에 입력되고, <i>Target Sentence</i>가 Decoder에 입력되며 훈련을 진행한다. 고로 두 문장이 한 쌍을 이루는 병렬 데이터가 불가피하다. 헌데 단일 데이터만으로 훈련을 하겠다니? 잘 상상이 가지 않는다. 저자들은 두 가지 방법을 제안했다.<br>
 <br>
 <br>
+<br>
 
 ### 1-1. Dummy Source Sentence
 ------------
@@ -45,6 +47,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 </center>
 <br>
 &nbsp;이 경우 Decoder만 새로운 문장에 대해 추가 학습이 진행되는 것과 같은 효과이므로, 저자들이 말한 대로 <strong>유창한 번역을 만드는 데에 도움이 될 것 같은 느낌</strong>이 든다!<br>&nbsp;유의할 점은 단일 데이터가 병렬 데이터의 수를 넘어가게 되면 <i>(비율이 1:1을 초과하면)</i> Decoder가 <i>Source Sentence</i>로부터 추출한 정보를 잊어버리고, <i>Target Sentence</i>에 의존적인 양상을 보이게 된다고 한다. 이 문제점을 해결하고자 한 것이 두 번째 방법이고, 바로 <span style="background-color: #eeeeff"><strong><strong>Back Translation</strong></strong></span>이다.<br>
+<br>
 <br>
 <br>
 ### 1-2. Synthetic Source Sentence (Back Translation)
@@ -65,7 +68,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 &nbsp;여기까지가 [\<Improving Neural Machine Translation Models with Monolingual Data\>](https://arxiv.org/pdf/1511.06709.pdf) 논문이 제안하는 방법이다. 해당 논문에서도 실험을 진행했지만, 인공 데이터와 실제 데이터의 비율이나 개수 측면에서 다소 경험적으로 보이는 <del>(때려 맞춘)</del> 부분이 있어 여기서 소개하지는 않겠다. 가장 눈에 띄는 결과는 <strong><i>German→English WMT 15</i></strong> 에서 <span style="background-color: #eeffee"><strong>3.6 - 3.7 BLEU</strong></span>를 증가시킨 부분이다 <i>(31.6 BLEU in newstest 2015 with ensemble of 4)</i>. 추가로 인공 데이터를 생성하는 방법에 대해서 <i>Greedy Decoding</i>과 <i>Beem Search</i>를 비교한 부분이 있지만, 이 역시 후술할 논문에서 상세하게 다루고 있으니, 어서 다음 파트로 넘어가자.<br>
 <br>
 <br>
-
+<br>
 ### 2. Understanding Back-Translation at Scale
 -----------
 &nbsp;앞서 말했 듯이 Back Translation을 소개한 논문에는 다소 경험적으로 보이는 부분이 있었다. 즉, 분석이 부족했다. 이에 <span style="background-color: #eeeeff"><strong>Back Translation</strong></span>을 자세히 분석하려는 시도가 있었고, 해당 논문은 2018년 EMLNP에서 소개되었다. 무려 <strong>Facebook</strong>과 <strong>Google</strong>의 합작품인 [\<Understanding Back-Translation at Scale\>](https://arxiv.org/pdf/1808.09381.pdf)이다.<br>
@@ -77,6 +80,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 &nbsp;여기서부턴 저자들이 'Back Translation의 후속 논문이 안나오게 하려는구나...' 하는 생각이 들 정도의 디테일인데, <strong><i>4) Back Translation을 진행하는 단일 데이터의 도메인이 미치는 영향</i></strong> 과 너무 인공 데이터만 학습하면 산으로 갈 수 있으니 <strong><i>5) 학습 중에 실제 데이터를 학습하는 빈도</i></strong> <i>(논문에서는 visit이라고 표현하였다)</i>, 마지막으로 이 모든 걸 종합하여 <strong><i>6) 온 힘 다해 학습했을 때의 성능</i></strong> 을 소개하며 논문을 마친다 <i>(V100 GPU 128개...)</i>.<br>
 <br>
 &nbsp;자, 하나하나 톺아보도록 하자.<br>
+<br>
 <br>
 <br>
 #### 1, 2) Synthetic Data Generation Methods & Analysis
@@ -126,6 +130,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 &nbsp;다만 저 문제집도 결국 <strong>문제 푸는 학생<i>(번역 모델)</i>이 만들었다는 점</strong>을 간과할 수 없다. 만약 충분히 학습되지 않은 모델이 어렵게만 인공 데이터를 만든다면, 그건 무작위의 단어를 나열한 것과 크게 다르지 않을 것이다. 따라서 저자들은 <i>Back Translation</i>이 효과적일 수 있는 <strong>최소한의 병렬 데이터 수</strong>를 알아내야 했다.<br>
 <br>
 <br>
+<br>
 #### 3)  Low Resource vs. High Resource
 ---------------------
 &nbsp;앞서 진행한 실험은 500만 개에서 2,900만 개까지의 데이터에서 진행했기 때문에 어쩌면 객관성이 떨어질 수도 있다. 왜냐면 저 정도의 병렬 데이터는 그럴 듯한 번역기를 만들기에 충분해서, <i>Random Sampling</i>조차도 이상적인 확률 분포에서 이루어졌을 수 있지 않은가? 그렇기 때문에 저자들은 병렬 데이터 수를 줄여가며 실험을 진행했고, 그 환경을 <strong>Low Resource</strong>라 칭하였다.<br>
@@ -137,6 +142,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 </center>
 <br>
 &nbsp;위 그래프는 병렬 데이터를 8만 개까지 줄여가며 실험을 진행한 결과이다. <span style="color: #aa3333"><strong>붉은 선</strong></span>이 <i>Sampling</i>이고, <span style="color: #3333aa"><strong>푸른 선</strong></span>이 <i>Beam</i>. 결과는 한 눈에 들어오는 편이다. <strong>적어도 <i>64만 개 이상의 병렬 데이터</i> 를 가지고 있을 때, Sampling이 효과를 보기 시작한다</strong>. 추가로, <strong>Back Translation 자체는 모든 경우에서 효과적이다</strong>. 이 쯤에서 우린 번역 모델을 완성하고, 모든 훈련을 마친 후 쓸 수 있는 히든 카드를 얻은 셈이다 <del>(중복 할인되는 쿠폰만큼이나 든든하다)</del>.<br>
+<br>
 <br>
 <br>
 #### 4) Domain of Synthetic Data
@@ -160,6 +166,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 </center>
 <br>
 &nbsp;위 그래프는 여러가지 도메인을 섞은 데이터셋으로 실험을 진행한 결과이다. 뉴스에서 강건했던 <span style="color: #aa7733"><strong>갈색 선</strong></span>은 맥 없이 고꾸라지고 말았다. 대신 이 부분에선 첫 실험에서 <i>가려져 있던 빛나는 결과</i>를 볼 수 있다. 이전 실험도 그렇고 <span style="color: #aa3333"><strong>붉은 선</strong></span>이 <span style="color: #3333aa"><strong>푸른 선</strong></span>에 비해 성능이 크게 뒤쳐지지 않는다. 그 말은 곧, <span style="background-color: #eeffee"><strong>64만 개의 병렬 데이터만 확보된다면 500만 개가 있을 때의 성능을 유사하게 만들어 낼 수 있다는 것</strong></span>이다! 데이터가 적어 중도 포기한 번역 모델이 있다면, 오랜만에 다시 살펴보도록 하자.<br>
+<br>
 <br>
 <br>
 #### 5) Upsampling the Bitext
