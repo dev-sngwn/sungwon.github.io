@@ -94,7 +94,6 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-07-back-translation/05_ex.png" width="100%"/>
 
 </center>
-<br>
 
 > <strong>Random Sampling</strong>: 모델의 확률 분포에 따라서 랜덤하게 단어를 선택한다. 예를 들어 모델의 확률 분포가 "I"의 다음 단어로 "am"을 90%, "will"을 10%로 가진다면 10문장을 생성했을 때 "I am" 은 9문장, "I will"은 1문장이 나오는 식이다.<br>
 > <br>
@@ -118,7 +117,6 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 
 > Perplexity: 번역하면 당황도, 혼잡도 정도가 되는데, 번역이 얼마나 개판인지 평가해주는 지표이다. 높을 수록 난해한 문장을 생성했다고 이해하면 된다.
 
-<br>
 <center>
 
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-07-back-translation/07_graph_2.png" width="100%"/>
