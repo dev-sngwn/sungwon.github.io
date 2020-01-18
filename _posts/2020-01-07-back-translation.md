@@ -4,7 +4,6 @@ title: Back Translation 정리
 subtitle: ": 번역기 성능 영혼까지 끌어모으기"
 tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 ---
-<br>
 > 직접 발표를 진행한 내용입니다,<br>
 > 본 글보다 쉽게 설명하였으니 혹여나 내용이 어렵다면 영상을 먼저 보시길 권장합니다.
 > Link: [my-slide-and-presentation](https://github.com/dev-sngwn/my-slide-and-presentation)
@@ -79,12 +78,13 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 <br>
 &nbsp;<strong><i>1) 인공 데이터 생성 방법 </i></strong>을 먼저 분석하고, 1)에서 최적이었던 결과가 <strong><i>2) 질 좋은 인공 데이터를 생성하는가 </i></strong>에 대해 고찰하였다 (언어적인 측면에서). 또, 인공 데이터를 생성하는 모델도 결국 병렬 데이터로 훈련을 진행해야 하기에 <strong><i>3) 병렬 데이터가 얼마나 있어야 효과적인가? </i></strong>에 대해 고려했다. <br>
 <br>
-&nbsp;여기서부턴 저자들이 'Back Translation의 후속 논문이 안 나오게 하려는구나...' 하는 생각이 들 정도의 디테일인데, <strong><i>4) Back Translation을 진행하는 단일 데이터의 도메인이 미치는 영향</i></strong> 과 너무 인공 데이터만 학습하면 산으로 갈 수 있으니 <strong><i>5) 학습 중에 실제 데이터를 학습하는 빈도</i></strong>, 마지막으로 이 모든 걸 종합하여 온 힘 다해 학습했을 때의 성능을 소개하며 논문을 마친다 <i>(V100 GPU 128개...)</i>.<br>
+&nbsp;여기서부턴 저자들이 'Back Translation의 후속 논문이 안 나오게 하려는구나...' 하는 생각이 들 정도의 디테일인데, <strong><i>4) Back Translation을 진행하는 단일 데이터의 도메인이 미치는 영향</i></strong> 과 너무 인공 데이터만 학습하면 산으로 갈 수 있으니 <strong><i>5) 학습 중에 실제 데이터를 학습하는 빈도</i></strong>, 마지막으로 이 모든 걸 종합하여 온 힘 다해 학습했을 때의 성능을 소개하며 논문을 마친다<i>(V100 GPU 128개...)</i>.<br>
 <br>
 &nbsp;자, 하나하나 톺아보도록 하자.<br>
 <br>
 <br>
 <br>
+
 #### 1, 2) Synthetic Data Generation Methods & Analysis
 ----------------------
 &nbsp;앞선 연구에서는 인공 데이터를 생성하는 데에 <i>Greedy Decoding</i>과 <i>Beam Search</i>를 사용했다. 저 두 방법은 모두 MAP(Maximum A-Posteriori)를 사용하며 <strong>가장 높은 확률을 갖는 데이터</strong>를 생성하게 된다. 저자들은 두 방법 외에 <strong>Non-MAP</strong> 방법을 비교해보고자 하였다. Non-MAP 방법으론 <i>Random Sampling</i>과 <i>Top-10 Sampling</i>, <i>Noise를 추가한 Beam Search (이하 Noise Beam)</i>이 있다.<br>
@@ -159,17 +159,18 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 
 </center>
 <br>
-&nbsp;위 그래프는 <i>WMT</i>의 평가 데이터셋인 <i>newstest</i>로 실험을 진행한 결과이다. 이름에 명시되어 있듯이 뉴스에서 크롤링한 병렬 데이터이다. <span style="color: #aa7733"><strong>갈색 선</strong></span>이 <strong>뉴스 데이터로 Back Translation</strong>한 결과, <span style="color: #aa3333"><strong>붉은 선</strong></span>이 <strong>일반적인 데이터(정확히는 병렬 데이터의 일부)로 Back Translation</strong>한 결과, <span style="color: #3333aa"><strong>푸른 선</strong></span>이 <strong>그냥 병렬 데이터</strong>로 학습한 결과이다.<br>
+&nbsp;위 그래프는 <i>WMT</i> 의 평가 데이터셋인 <i>newstest</i> 로 실험을 진행한 결과이다. 이름에 명시되어 있듯이 뉴스에서 크롤링한 병렬 데이터이다. <span style="color: #aa7733"><strong>갈색 선</strong></span>이 <strong>뉴스 데이터로 Back Translation</strong>한 결과, <span style="color: #aa3333"><strong>붉은 선</strong></span>이 <strong>일반적인 데이터(정확히는 병렬 데이터의 일부)로 Back Translation</strong>한 결과, <span style="color: #3333aa"><strong>푸른 선</strong></span>이 <strong>그냥 병렬 데이터</strong>로 학습한 결과이다.<br>
 <br>
 &nbsp;특정 구간에서는 <strong>Back Translation이 실제 데이터를 능가</strong>하기도 한다! 물론 <span style="color: #aa3333"><strong>붉은 선</strong></span>은 성능이 떨어지는 걸로 보아 <strong>뉴스에 한정적임</strong>을 직감할 수 있다. <i>어느 분야에서나 그렇겠지만 도메인 의존적인 것은 지양해야 한다. 결국 목적은 실제 세상에 적용하고자 함이니, 온실 속 화초는 시들기 마련 아니겠는가?</i> 고로 저자들은 온실 속 화초를 야생에 내놓았다.<br>
 <br>
+
 <center>
 
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-07-back-translation/10_graph_5.png" width="100%"/>
 
 </center>
 <br>
-&nbsp;위 그래프는 여러 가지 도메인을 섞은 데이터셋으로 실험을 진행한 결과이다. 뉴스에서 강건했던 <span style="color: #aa7733"><strong>갈색 선</strong></span>은 맥 없이 고꾸라지고 말았다. 대신 이 부분에선 첫 실험에서 <i>가려져 있던 빛나는 결과</i>를 볼 수 있다. 이전 실험도 그렇고 <span style="color: #aa3333"><strong>붉은 선</strong></span>이 <span style="color: #3333aa"><strong>푸른 선</strong></span>에 비해 성능이 크게 뒤처지지 않는다. 그 말은 곧, <span style="background-color: #eeffee"><strong>64만 개의 병렬 데이터만 확보된다면 500만 개가 있을 때의 성능을 유사하게 만들어 낼 수 있다는 것</strong></span>이다! 데이터가 적어 중도 포기한 번역 모델이 있다면, 오랜만에 다시 살펴보도록 하자.<br>
+&nbsp;위 그래프는 여러 가지 도메인을 섞은 데이터셋으로 실험을 진행한 결과이다. 뉴스에서 강건했던 <span style="color: #aa7733"><strong>갈색 선</strong></span>은 맥 없이 고꾸라지고 말았다. 대신 이 부분에선 첫 실험에서 <i>가려져 있던 빛나는 결과</i> 를 볼 수 있다. 이전 실험도 그렇고 <span style="color: #aa3333"><strong>붉은 선</strong></span>이 <span style="color: #3333aa"><strong>푸른 선</strong></span>에 비해 성능이 크게 뒤처지지 않는다. 그 말은 곧, <span style="background-color: #eeffee"><strong>64만 개의 병렬 데이터만 확보된다면 500만 개가 있을 때의 성능을 유사하게 만들어 낼 수 있다는 것</strong></span>이다! 데이터가 적어 중도 포기한 번역 모델이 있다면, 오랜만에 다시 살펴보도록 하자.<br>
 <br>
 <br>
 <br>
@@ -195,7 +196,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 <br>
 ### 마치며
 -----------
-&nbsp;실험 결과는 서론에 언급했듯이 <i>WMT 2014</i>에서 <span style="background-color: #eeffee"><strong>35.0 BLEU</strong></span>로 <i>State-of-the-Art</i> 성능을 달성하였다. 자세한 실험 환경과 결과값이 궁금하다면 논문을 참고하길 바란다.<br>
+&nbsp;실험 결과는 서론에 언급했듯이 <i>WMT 2014</i> 에서 <span style="background-color: #eeffee"><strong>35.0 BLEU</strong></span>로 <i>State-of-the-Art</i> 성능을 달성하였다. 자세한 실험 환경과 결과값이 궁금하다면 논문을 참고하길 바란다.<br>
 &nbsp;본 논문은 기계 번역에 포커스를 맞춘 논문이지만, 어렴풋한 느낌으로는 많은 분야에 활용이 가능할 것 같다. <strong>인공 데이터가 의미 있으며 실제 데이터를 능가할 수도 있다는 것을 증명</strong>하였으니, 모두 각자 연구하는 분야에 적용시킬 궁리를 해보도록 하자!
 <br>
 <br>
