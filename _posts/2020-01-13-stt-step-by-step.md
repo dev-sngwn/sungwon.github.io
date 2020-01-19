@@ -32,6 +32,7 @@ tags: [STT, SpeechToText, CSR, Clova, NCP, NaverCloud, NaverCloudPlatform]
 -------------------
 &nbsp;우선 <a href="https://www.ncloud.com/"><strong>NCP</strong></a>로 이동하여 서비스를 신청하도록 하자. <strong>[서비스] → [AI Service] → [Clova Speech Recognition(CSR)]</strong>로 이동한 후 <strong>[이용 신청하기]</strong>를 눌러주길 바란다.
 <br>
+<br>
 
 <center>
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-13-stt-step-by-step/01_main.png"/>
@@ -39,12 +40,14 @@ tags: [STT, SpeechToText, CSR, Clova, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 &nbsp;이동하고 나면 위와 같은 화면을 만나게 될 텐데, <strong>[Application 등록]</strong>을 눌러 진행한다.
 <br>
+<br>
 
 <center>
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-13-stt-step-by-step/02_csr.png"/>
 </center>
 <br>
-&nbsp;<strong>Application 이름</strong>을 입력한 후, 아래 리스트에서 원하는 서비스를 선택한다. NCP에서 제공하는 STT 모듈의 이름은 <span style="background-color: #ddffdd"><strong><i>Clova Speech Recognition(CSR)</i></strong></span>임에 유의하자. 체크!
+&nbsp;<strong>Application 이름</strong>을 입력한 후, 아래 리스트에서 원하는 서비스를 선택한다. NCP에서 제공하는 STT 모듈의 이름은 <span style="background-color: #ddffdd"><strong><i>Clova Speech Recognition(CSR)</i></strong></span> 임에 유의하자. 체크!
+<br>
 <br>
 
 <center>
@@ -52,6 +55,7 @@ tags: [STT, SpeechToText, CSR, Clova, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 <br>
 &nbsp;하단으로 내려오면 <strong>서비스 환경 등록</strong> 부분이 있는데, <strong>요청을 보낼 IP</strong>를 적으면 된다. 이번 글에서는 로컬에서만 구동할 것이므로 <i>http://localhost</i> 라고 적은 후 URL을 <strong>추가</strong>하자. <i>Android와 iOS, 로컬 외의 Web은 이번 글에서는 다루지 않는다.</i>
+<br>
 <br>
 
 <center>
@@ -76,13 +80,13 @@ tags: [STT, SpeechToText, CSR, Clova, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 &nbsp;<i>*참고: 필자는 Jupyter Notebook에서 테스트를 진행했는데, 본 API는 허용할 URL을 지정해주는 방식이다 보니 그 외의 파이썬 환경에서는 동작하지 않을 수 있다.</i>
 <br>
+<br>
 
 <center>
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-13-stt-step-by-step/07_spec.png"/>
 </center>
 <br>
-&nbsp;NCP에서 제공하는 [API 참조서](https://apidocs.ncloud.com/ko/ai-naver/clova_speech_recognition/stt/)에 첨부된 <strong>요청 정보</strong>이다. 요청을 보낼 URL, 파라미터와 헤더, 바디... 정말 쓰기 쉽게 잘 작성되어 있다! 이제 테스트를 진행하기 위한 목소리를 가져와보자.
-<br>
+&nbsp;NCP에서 제공하는 [API 참조서](https://apidocs.ncloud.com/ko/ai-naver/clova_speech_recognition/stt/)에 첨부된 <strong>요청 정보</strong>이다. 요청을 보낼 URL, 파라미터와 헤더, 바디... 정말 쓰기 쉽게 잘 작성되어 있다! 이제 테스트를 진행하기 위한 목소리를 가져와보자.<br>
 
 <center>
 <audio controls="controls">
@@ -143,7 +147,7 @@ output: // Original Vesion
 <br>
 <i>Fast Version</i>
 </center>
-
+<br>
 <center>
 <audio controls="controls">
   <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-13-stt-step-by-step/tuned.mp3"></source>
@@ -162,7 +166,7 @@ output: // Original Vesion
 output: // Fast Vesion
 {"text":"네이버 클라우드 플랫폼에 시작했으면 된 문장입니다"}
 ~~~
-
+<br>
 ~~~javascript
 // Expected: "네이버 클라우드 플랫폼의 CSR 테스트를 위한 데모 문장입니다."
 output: // Tune Vesion
