@@ -206,11 +206,11 @@ else:
 
 <center>
 <audio controls="controls">
-  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/shinji.mp3"></source>
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/meimei.mp3"></source>
   <p>Your browser does not support the audio element.</p>
 </audio>
 <br>
-<code>shinji (일본어, 남성 음색)</code>
+<code>meimei (중국어, 여성 음색)</code>
 </center>
 
 <br>
