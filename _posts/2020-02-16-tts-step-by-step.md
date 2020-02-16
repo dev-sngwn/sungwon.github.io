@@ -41,7 +41,7 @@ tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 
 <br>
-&nbsp;Android와 iOS는 이번 글에서는 다루지 않는다(<del>자꾸 CSR 때 했던 말을 반복하는 것 같다</del>). 로컬 환경에서만 요청을 주고 받을 것이므로 <strong>서비스 환경 등록</strong> 부분에는<i>https://localhost</i>를 입력하고 추가하면 서비스를 생성할 수 있다.<br>
+&nbsp;Android와 iOS는 이번 글에서는 다루지 않는다(<del>자꾸 CSR 때 했던 말을 반복하는 것 같다</del>). 로컬 환경에서만 요청을 주고 받을 것이므로 <strong>서비스 환경 등록</strong> 부분에는<i>https://localhost </i>를 입력하고 추가하면 애플리케이션을 등록할 수 있다.<br>
 <br>
 
 <center>
@@ -49,7 +49,7 @@ tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 
 <br>
-&nbsp;생성된 서비스의 인증 정보를 메모해두면 NCP에서 할 일은 끝났다. 정말 간단하다!<br>
+&nbsp;생성된 서비스의 인증 정보를 메모해두면 NCP에서 할 일은 끝났다. <strong>정말 간단하다!</strong><br>
 <br>
 <br>
 <br>
@@ -67,7 +67,7 @@ tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 &nbsp;아래 소스를 실행하면 <code>text</code>의 텍스트가 음성 파일로 변환되어 소스 경로에 저장된다.
 <br>
-&nbsp;<i>* 참고: 필자는 Jupyter Notebook에서 테스트를 진행했으며 그 외의 파이썬 환경에서는 동작하지 않을 수 있다.</i>
+&nbsp;<i>* 참고: 필자는 Jupyter Notebook에서 테스트를 진행했으며 그 외의 환경에서는 동작하지 않을 수 있다.</i>
 
 ~~~ python
 import os
@@ -112,10 +112,10 @@ if response.getcode()==200:
     
     now = time.localtime()
     response_body = response.read()
-    file_name = speaker + "_" + str(speed) + "_" + \
-                "%04d%02d%02d_%02d%02d%02d" % \
+    file_name = "%04d%02d%02d_%02d%02d%02d" % \
                 (now.tm_year, now.tm_mon, now.tm_mday,
-                 now.tm_hour, now.tm_min, now.tm_sec)
+                 now.tm_hour, now.tm_min, now.tm_sec) + "_" + \
+                speaker + "_" + str(speed) + "_"
     
     with open(file_name + ".mp3", 'wb') as f:
         f.write(response_body)
@@ -129,7 +129,7 @@ else:
 
 ~~~ markdown
 CSS 성공! 파일을 저장합니다.
-파일명: jinho_0_20YYMMDD_HHMMSS # 코드가 포함된 경로에 저장됩니다.
+파일명: 20YYMMDD_HHMMSS_0_jinho # 코드가 포함된 경로에 저장됩니다.
 ~~~
 <br>
 
