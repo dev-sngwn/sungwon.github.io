@@ -143,7 +143,7 @@ else:
 &nbsp;가지고 놀만한 것은 <strong>Speaker</strong>! <del>꽤 많은 음성이 준비되었다고 생각했는데, 직접 해보니 지원되지 않는 음성이 많았다.</del> <strong>한국어를 지원하는 음성이 있고, 올바른 언어를 전달해줘야만 동작하는 언어가 있다(대부분).</strong> 각자의 음성을 들어보도록 하자!<br>
 
 <details markdown="1">
-<summary>모든 음성 펼치기</summary>
+<summary><u><span style="color: #0000aa">모든 음성 펼치기</span></u></summary>
 
 <center>
 
