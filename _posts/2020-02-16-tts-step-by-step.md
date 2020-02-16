@@ -13,7 +13,7 @@ tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 &nbsp;Naver Cloud Platform(이하 NCP)은 AI 서비스를 API 형태로 제공한다. 성능은 그들도 신이 아니기에 100% 완벽하지는 않지만, 직접 만들자 생각해보면 답 없... 적어도 <strong>현존하는 서비스 중에는 가장 높은 수준</strong>을 보이지 않나 생각한다(실제로 수많은 Task들에 이름을 올린 것으로 증명했다).<br>
 <br>
-&nbsp;이번엔 NCP의 Text-to-Speech(TTS) 모듈인 Clova Speech Synthesis(CSS)를 사용해 본 후기를 공유하고자 한다.<br>
+&nbsp;이번엔 NCP의 Text-to-Speech(TTS) 모듈인 <span style="background-color: #ddffdd"><strong><i>Clova Speech Synthesis(CSS)</i></strong></span>를 사용해 본 후기를 공유하고자 한다.<br>
 <br>
 <br>
 <br>
@@ -33,7 +33,7 @@ tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 
 <br>
-&nbsp;<strong>Application 이름</strong>을 입력한 후, 아래 리스트에서 사용하고자 하는 서비스를 선택한다. NCP에서 제공하는 TTS 모듈의 이름은 CSS임에 유의한다. 체크해준 후, 아래로 쭉쭉!<br>
+&nbsp;<strong>Application 이름</strong>을 입력한 후, 아래 리스트에서 사용하고자 하는 서비스를 선택한다. NCP에서 제공하는 TTS 모듈의 이름은 <strong>CSS</strong>임에 유의한다. 체크해준 후, 아래로 쭉쭉!<br>
 <br>
 
 <center>
@@ -55,7 +55,7 @@ tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 </center>
 
 <br>
-&nbsp;생성된 서비스의 인증 정보를 메모해두면 NCP에서 할 일은 끝났다. <strong>정말 간단하다!</strong><br>
+&nbsp;생성된 서비스의 <strong>[인증 정보]</strong>를 메모해두면 NCP에서 할 일은 끝났다. 정말 간단하다!<br>
 <br>
 <br>
 <br>
@@ -132,7 +132,7 @@ else:
   <p>Your browser does not support the audio element.</p>
 </audio>
 <br>
-<i>네이버 클라우드 플랫폼의 CSS 모듈 시험 문장입니다.</i>
+<i>"네이버 클라우드 플랫폼의 CSS 모듈 시험 문장입니다.""</i>
 </center>
 
 <br>
