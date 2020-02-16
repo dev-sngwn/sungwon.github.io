@@ -4,13 +4,11 @@ title: 텍스트를 음성 mp3로 간단하게 변환하기 (With Naver Cloud Pl
 subtitle: ": 딥러닝 몰라도 TTS 하는 법"
 tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 ---
-<br>
-
 <strong>이전 글</strong><br>
 
-> * [한국어 OCR 해내기 1편: 가뿐하게 OCR API를 만들고 쓰기](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-1/)<br>
-> * [한국어 OCR 해내기 2편: 입맛대로 커스텀한 OCR 만들기](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-2/)<br>
-> * [음성인식 코드 짜는 최단 경로: 순식간에 STT 완성하기](https://dev-sngwn.github.io/2020-01-13-stt-step-by-step/)
+* [<i>한국어 OCR 해내기 1편: 가뿐하게 OCR API를 만들고 쓰기</i>](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-1/)<br>
+* [<i>한국어 OCR 해내기 2편: 입맛대로 커스텀한 OCR 만들기</i>](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-2/)<br>
+* [<i>음성인식 코드 짜는 최단 경로: 순식간에 STT 완성하기</i>](https://dev-sngwn.github.io/2020-01-13-stt-step-by-step/)
 
 <br>
 &nbsp;Naver Cloud Platform(이하 NCP)은 AI 서비스를 API 형태로 제공한다. 성능은 그들도 신이 아니기에 100% 완벽하지는 않지만, 직접 만들자 생각해보면 답없... 적어도 <strong>현존하는 서비스 중에는 가장 높은 수준</strong>을 보이지 않나 생각한다(실제로 수많은 Task들에 이름을 올린 것으로 증명했다).<br>

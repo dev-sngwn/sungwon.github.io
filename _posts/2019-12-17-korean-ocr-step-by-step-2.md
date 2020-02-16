@@ -4,11 +4,9 @@ title: 한국어 OCR 해내기 (With Naver Cloud Platform) 2편
 subtitle: ": 입맛대로 커스텀한 OCR 만들기"
 tags: [Korean, KoreanOCR, OCR, NCP, NaverCloud, NaverCloudPlatform]
 ---
-<br>
-
 <strong>이전 글</strong><br>
 
-> * [한국어 OCR 해내기 1편: 가뿐하게 OCR API를 만들고 쓰기](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-1/)
+* [<i>한국어 OCR 해내기 1편: 가뿐하게 OCR API를 만들고 쓰기</i>](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-1/)<br>
 
 <br>
 
@@ -329,4 +327,3 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-

@@ -4,12 +4,10 @@ title: 음성인식 코드 짜는 최단 경로 (With Naver Cloud Platform)
 subtitle: ": 순식간에 STT 완성하기"
 tags: [STT, SpeechToText, CSR, Clova, NCP, NaverCloud, NaverCloudPlatform]
 ---
-<br>
-
 <strong>이전 글</strong><br>
 
-> * [한국어 OCR 해내기 1편: 가뿐하게 OCR API를 만들고 쓰기](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-1/)
-> * [한국어 OCR 해내기 2편: 입맛대로 커스텀한 OCR 만들기](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-2/)
+* [<i>한국어 OCR 해내기 1편: 가뿐하게 OCR API를 만들고 쓰기</i>](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-1/)<br>
+* [<i>한국어 OCR 해내기 2편: 입맛대로 커스텀한 OCR 만들기</i>](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-2/)<br>
 
 <br>
 &nbsp;불현듯 <strong>한본어 서비스</strong>를 만들어 보고 싶다는 생각이 들었다. 인터넷 방송이나 유튜브를 즐겨보시는 분은 익숙하실 텐데 한본어가 뭐냐면... 
