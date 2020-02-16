@@ -4,6 +4,14 @@ title: 음성인식 코드 짜는 최단 경로 (With Naver Cloud Platform)
 subtitle: ": 순식간에 STT 완성하기"
 tags: [STT, SpeechToText, CSR, Clova, NCP, NaverCloud, NaverCloudPlatform]
 ---
+<br>
+
+<strong>이전 글</strong><br>
+
+> * [한국어 OCR 해내기 1편: 가뿐하게 OCR API를 만들고 쓰기](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-1/)
+> * [한국어 OCR 해내기 2편: 입맛대로 커스텀한 OCR 만들기](https://dev-sngwn.github.io/2019-12-17-korean-ocr-step-by-step-2/)
+
+<br>
 &nbsp;불현듯 <strong>한본어 서비스</strong>를 만들어 보고 싶다는 생각이 들었다. 인터넷 방송이나 유튜브를 즐겨보시는 분은 익숙하실 텐데 한본어가 뭐냐면... 
 <br>
 
@@ -28,7 +36,7 @@ tags: [STT, SpeechToText, CSR, Clova, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 <br>
 
-### 1. 어플리케이션 등록
+### 1. 애플리케이션 등록
 -------------------
 &nbsp;우선 <a href="https://www.ncloud.com/"><strong>NCP</strong></a>로 이동하여 서비스를 신청하도록 하자. <strong>[서비스] → [AI Service] → [Clova Speech Recognition(CSR)]</strong>로 이동한 후 <strong>[이용 신청하기]</strong>를 눌러주길 바란다.
 <br>
@@ -78,7 +86,7 @@ tags: [STT, SpeechToText, CSR, Clova, NCP, NaverCloud, NaverCloudPlatform]
 <br>
 &nbsp;생성된 Application의 <strong>[인증 정보]</strong>를 눌러 <i>Client ID</i> 와 <i>Client Secret</i> 을 메모해둔다. 여기까지가 NCP에서 할 일! 이제 본인이 사용하는 파이썬 환경으로 이동하자. <br>
 <br>
-&nbsp;<i>*참고: 필자는 Jupyter Notebook에서 테스트를 진행했는데, 본 API는 허용할 URL을 지정해주는 방식이다 보니 그 외의 파이썬 환경에서는 동작하지 않을 수 있다.</i>
+&nbsp;<i>* 참고: 필자는 Jupyter Notebook에서 테스트를 진행했는데, 본 API는 허용할 URL을 지정해주는 방식이다 보니 그 외의 파이썬 환경에서는 동작하지 않을 수 있다.</i>
 <br>
 <br>
 
