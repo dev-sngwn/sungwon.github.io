@@ -125,6 +125,8 @@ if response.getcode()==200:
 else:
     print("Error Code:" + rescode)
 ~~~
+<br>
+
 ~~~ markdown
 CSS 성공! 파일을 저장합니다.
 파일명: jinho_0_20YYMMDD_HHMMSS # 코드가 포함된 경로에 저장됩니다.
@@ -133,7 +135,7 @@ CSS 성공! 파일을 저장합니다.
 
 <center>
 <audio controls="controls">
-  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/sample.mp3"></source>
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/test.mp3"></source>
   <p>Your browser does not support the audio element.</p>
 </audio>
 <br>
@@ -143,7 +145,7 @@ CSS 성공! 파일을 저장합니다.
 <br>
 &nbsp;오... <strong>제법 자연스러운 음성</strong>이 생성되었다.<br>
 <br>
-&nbsp;하지만 Clova의 음성 생성 프로젝트들은 직접 <strong>[더빙](https://clova.ai/voice)</strong>을 하거나 <strong>[전화 상담](https://www.facebook.com/ClovaAIResearch/posts/1013208905715490?__xts__%5B0%5D=68.ARAQPbA8sd7SEbZkQ7eGVv7xOGG-NwzoyvSwQ_mENlR3TCo77FpK1lAZ7q7AVWYKqdyqrG0i7NbLj120-Sj5tTtwyrmCCSUE8iw3Jpx5t042iyCteesT-kVEdfaStY6ps3FncLtuX8-oCdY_b2i-ssgEFeclwOTtXrQ1rEnvt1AnhaDiPv0_O3ytNbJ11fsyJO9FewElhRk5R0mRdn0NvCk2l6o-S6bFA-xEFDhAyeH6ODYQLa7i6XIDbTYivhbTcO8egrFO5RQxBrNKBnyEBmQZia8PUco6wdcaKohlCg3rXqSIIbOu7zF_OLAFvspXGlCPOss0_VQjiXqmx5sjSMAg-Q&__tn__=-R)</strong>을 할 정도로 수준이 높아 그만큼 기대가 되었는데, 그에 비하면 조금 아쉬운 결과긴 하다. 사실 요청 오는 고작 한 문장으로 감정 상태를 파악하는 게 절대 쉽지 않아서(솔직히 불가능이라서) 이보다 자연스러운 억양은 자동으로는 안될 것 같고, 감정 상태를 직접 정의해주는 방식으론 가능하지 않을까 생각한다. <i>작성 중에 알아보니 Clova Premium Voice에서 해당 기능을 지원하는 듯 하다, 추후 다뤄보겠다.</i>..<br>
+&nbsp;하지만 Clova의 음성 생성 프로젝트들은 직접 <strong>[더빙](https://clova.ai/voice)</strong>을 하거나 <strong>[전화 상담](https://www.facebook.com/ClovaAIResearch/posts/1013208905715490?__xts__%5B0%5D=68.ARAQPbA8sd7SEbZkQ7eGVv7xOGG-NwzoyvSwQ_mENlR3TCo77FpK1lAZ7q7AVWYKqdyqrG0i7NbLj120-Sj5tTtwyrmCCSUE8iw3Jpx5t042iyCteesT-kVEdfaStY6ps3FncLtuX8-oCdY_b2i-ssgEFeclwOTtXrQ1rEnvt1AnhaDiPv0_O3ytNbJ11fsyJO9FewElhRk5R0mRdn0NvCk2l6o-S6bFA-xEFDhAyeH6ODYQLa7i6XIDbTYivhbTcO8egrFO5RQxBrNKBnyEBmQZia8PUco6wdcaKohlCg3rXqSIIbOu7zF_OLAFvspXGlCPOss0_VQjiXqmx5sjSMAg-Q&__tn__=-R)</strong>을 할 정도로 수준이 높아 그만큼 기대가 되었는데, 그에 비하면 <strong>조금 아쉬운 결과</strong>긴 하다. 사실 요청 오는 고작 한 문장으로 감정 상태를 파악하는 게 절대 쉽지 않아서(솔직히 불가능이라서) 이보다 자연스러운 억양은 자동으로는 안될 것 같고, 감정 상태를 직접 정의해주는 방식으론 가능하지 않을까 생각한다. <i>작성 중에 알아보니 Clova Premium Voice에서 해당 기능을 지원하는 듯 하다, 추후 다뤄보겠다.</i>..<br>
 <br>
 &nbsp;가지고 놀만한 것은 <strong>Speaker</strong>! <del>꽤 많은 음성이 준비되었다고 생각했는데, 직접 해보니 지원되지 않는 음성이 많았다.</del> <strong>한국어를 지원하는 음성이 있고, 올바른 언어를 전달해줘야만 동작하는 언어가 있다(대부분).</strong> 각자의 음성을 들어보도록 하자!<br>
 
@@ -211,11 +213,11 @@ CSS 성공! 파일을 저장합니다.
 
 <center>
 <audio controls="controls">
-  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/meimei.mp3"></source>
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/shinji.mp3"></source>
   <p>Your browser does not support the audio element.</p>
 </audio>
 <br>
-<code>meimei (중국어, 여성 음색)</code>
+<code>shinji (일본어, 남성 음색)</code>
 </center>
 
 <br>
@@ -273,9 +275,9 @@ CSS 성공! 파일을 저장합니다.
 </center>
 
 <br>
-&nbsp;정말 이해할 수 없지만 이게 돼버렸다! 영어로 발음 기호를 적어서 준 것도, 일본어로 변환해서 준 것도 아니고... <strong>그냥 한국어를 전달</strong>했는데 TTS가 된다! 다른 언어들은 한국어만 전달하면 인식할 수 있는 단어가 없어 <code>HTTPError 400</code>을 발생시킨다. <strong>오직 <code>shinji</code> , 일본어에만 가능하다!</strong>
+&nbsp;정말 이해할 수 없지만 이게 돼버렸다! 영어로 발음 기호를 적어서 준 것도, 일본어로 변환해서 준 것도 아니고... <strong>그냥 한국어를 전달</strong>했는데 TTS가 된다! 다른 언어들은 한국어만 전달하면 인식할 수 있는 단어가 없어 <code>HTTPError 400</code>을 발생시킨다. <strong>오직 <code>shinji</code> , 일본어에만 가능하다!</strong><br>
 <br>
-&nbsp;텍스트를 발음 기호로 변환 후 처리하는 방식이 아닐까? 라는 생각을 했는데, 그런 방식이면 어떤 언어던 다 작동되는게 맞고... 정말정말 이해할 수 없다... 어쩌면 클로바 팀도 한본어를 꿈꾸고 계셨던걸까 ㅋㅅㅋ?<br>
+&nbsp;텍스트를 발음 기호로 변환 후 처리하는 방식이 아닐까? 라는 생각을 했는데, 그런 방식이면 어떤 언어던 다 작동되는게 맞고... 정말 이해할 수 없다... 어쩌면 클로바 팀도 한본어를 꿈꾸고 계셨던걸까 ㅋㅅㅋ?<br>
 <br>
 &nbsp;여하튼 한본어가 성공했으니 저 말을 스페인 억양으로 너무 시켜보고 싶은데 그게 안돼서 아쉽다...... 일본어도 해냈으니 스페인어도 해내실 수 있습니다...... 클로바 화이팅...!
 <br>
