@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 텍스트를 음성 mp3로 간단하게 변환하기 (With Naver Cloud Platform)
-subtitle: ": 딥러닝 몰라도 TTS 할 수 있다!"
+subtitle: ": 딥러닝 몰라도 TTS 하는 법"
 tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 ---
 <br>
@@ -72,44 +72,202 @@ tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 &nbsp;<i>* 참고: 필자는 Jupyter Notebook에서 테스트를 진행했으며 그 외의 파이썬 환경에서는 동작하지 않을 수 있다.</i>
 
 ~~~ python
-client_id = ""
+import os
+import sys
+import urllib.request
+import time
+
+client_id = "your_client_id" # 인증 정보의 Client ID
+client_secret = "your_client_secret" # 인증 정보의 Client Secret
+
+speaker = "jinho"
+"""
+음성 합성에 사용할 목소리 종류
+
+mijin      : 한국어, 여성 음색
+jinho      : 한국어, 남성 음색
+clara      : 영어, 여성 음색
+matt       : 영어, 남성 음색
+shinji     : 일본어, 남성 음색
+meimei     : 중국어, 여성 음색
+liangliang : 중국어, 남성 음색
+jose       : 스페인어, 남성 음색
+carmen     : 스페인어, 여성 음색
+
+"""
+speed = 0 # -5(Fast) to 5(Slow)
+
+text = urllib.parse.quote("네이버 클라우드 플랫폼의 CSS 모듈 시험 문장입니다.")
+data = "speaker=" + speaker + "&speed=" + str(speed) + "&text=" + text
+
+url = "https://naveropenapi.apigw.ntruss.com/voice/v1/tts"
+request = urllib.request.Request(url)
+
+request.add_header("X-NCP-APIGW-API-KEY-ID", client_id)
+request.add_header("X-NCP-APIGW-API-KEY", client_secret)
+
+response = urllib.request.urlopen(request, data=data.encode('utf-8'))
+
+if response.getcode()==200:
+    
+    print("CSS 성공! 파일을 저장합니다.")
+    
+    now = time.localtime()
+    response_body = response.read()
+    file_name = speaker + "_" + str(speed) + "_" + \
+                "%04d%02d%02d_%02d%02d%02d" % \
+                (now.tm_year, now.tm_mon, now.tm_mday,
+                 now.tm_hour, now.tm_min, now.tm_sec)
+    
+    with open(file_name + ".mp3", 'wb') as f:
+        f.write(response_body)
+        
+    print("파일명:", file_name)
+        
+else:
+    print("Error Code:" + rescode)
 ~~~
 ~~~ markdown
-output
+CSS 성공! 파일을 저장합니다.
+파일명: jinho_0_20YYMMDD_HHMMSS # 코드가 포함된 경로에 저장됩니다.
 ~~~
 <br>
 
 <center>
 <audio controls="controls">
-  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-13-stt-step-by-step/hanbon.mp3"></source>
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/sample.mp3"></source>
   <p>Your browser does not support the audio element.</p>
 </audio>
 <br>
-<i>예문</i>
+<i>네이버 클라우드 플랫폼의 CSS 모듈 시험 문장입니다.</i>
 </center>
 
 <br>
-&nbsp;오... 조금 아쉽게도 <strong>무미건조한 음성</strong>이 생성되었다.<br>
+&nbsp;오... <strong>제법 자연스러운 음성</strong>이 생성되었다.<br>
 <br>
-&nbsp;Clova의 음성 생성 프로젝트들은 직접 <strong>[더빙](https://clova.ai/voice)</strong>을 하거나 <strong>[전화 상담](https://www.facebook.com/ClovaAIResearch/posts/1013208905715490?__xts__%5B0%5D=68.ARAQPbA8sd7SEbZkQ7eGVv7xOGG-NwzoyvSwQ_mENlR3TCo77FpK1lAZ7q7AVWYKqdyqrG0i7NbLj120-Sj5tTtwyrmCCSUE8iw3Jpx5t042iyCteesT-kVEdfaStY6ps3FncLtuX8-oCdY_b2i-ssgEFeclwOTtXrQ1rEnvt1AnhaDiPv0_O3ytNbJ11fsyJO9FewElhRk5R0mRdn0NvCk2l6o-S6bFA-xEFDhAyeH6ODYQLa7i6XIDbTYivhbTcO8egrFO5RQxBrNKBnyEBmQZia8PUco6wdcaKohlCg3rXqSIIbOu7zF_OLAFvspXGlCPOss0_VQjiXqmx5sjSMAg-Q&__tn__=-R)</strong>을 할 정도로 자연스러운 음성을 만들어내기에 기대치가 꽤나 높았기에 더욱 아쉽게 느껴지는 것 같다. 요청 오는 고작 한 문장으로 감정 상태를 파악하는 게 절대 쉽지 않아서(사실 불가능이라서) 말이 안되는 얘기긴 하다. 아마 추후에 감정 상태를 직접 정의하면 그에 따른 억양의 음성이 생성되는 기능이 생기지 않을까 생각한다. <i>작성 중에 알아보니 Clova Premium Voice에서 해당 기능을 지원하는 듯 하다, 추후 다뤄보겠다.</i>..<br>
+&nbsp;하지만 Clova의 음성 생성 프로젝트들은 직접 <strong>[더빙](https://clova.ai/voice)</strong>을 하거나 <strong>[전화 상담](https://www.facebook.com/ClovaAIResearch/posts/1013208905715490?__xts__%5B0%5D=68.ARAQPbA8sd7SEbZkQ7eGVv7xOGG-NwzoyvSwQ_mENlR3TCo77FpK1lAZ7q7AVWYKqdyqrG0i7NbLj120-Sj5tTtwyrmCCSUE8iw3Jpx5t042iyCteesT-kVEdfaStY6ps3FncLtuX8-oCdY_b2i-ssgEFeclwOTtXrQ1rEnvt1AnhaDiPv0_O3ytNbJ11fsyJO9FewElhRk5R0mRdn0NvCk2l6o-S6bFA-xEFDhAyeH6ODYQLa7i6XIDbTYivhbTcO8egrFO5RQxBrNKBnyEBmQZia8PUco6wdcaKohlCg3rXqSIIbOu7zF_OLAFvspXGlCPOss0_VQjiXqmx5sjSMAg-Q&__tn__=-R)</strong>을 할 정도로 수준이 높아 그만큼 기대가 되었는데, 그에 비하면 조금 아쉬운 결과긴 하다. 사실 요청 오는 고작 한 문장으로 감정 상태를 파악하는 게 절대 쉽지 않아서(솔직히 불가능이라서) 이보다 자연스러운 억양은 자동으로는 안될 것 같고, 감정 상태를 직접 정의해주는 방식으론 가능하지 않을까 생각한다. <i>작성 중에 알아보니 Clova Premium Voice에서 해당 기능을 지원하는 듯 하다, 추후 다뤄보겠다.</i>..<br>
 <br>
-&nbsp;가지고 놀만한 것은 <strong>Speaker</strong>! 꽤 많은 음성이 준비되었다고 생각했는데, 직접 해보니 지원되지 않는 음성이 많았다. 먼저 결과를 공유한다.<br>
+&nbsp;가지고 놀만한 것은 <strong>Speaker</strong>! <del>꽤 많은 음성이 준비되었다고 생각했는데, 직접 해보니 지원되지 않는 음성이 많았다.</del> <strong>한국어를 지원하는 음성이 있고, 올바른 언어를 전달해줘야만 동작하는 언어가 있다(대부분).</strong> 각자의 음성을 들어보도록 하자!<br>
+
+<details markdown="1">
+<summary>모든 음성 펼치기</summary>
 
 <center>
 
-| Speaker | 지원 여부 | 성별 | 언어 |
-|:---:|:---:|:---:|:---:|
-|<code>mijin</code>|<span style="color: #00aa00">O</span>|여|한국어|
-|<code>mijin</code>|<span style="color: #aa0000">X</span>|여|한국어|
-
-</center>
-<br>
-&nbsp;디테일이 살짝 아쉬운 부분인데, 지원되지 않는 음성에 대해선 <code>Http Error</code>를 발생시켜버린다. 미리 이름까지 정의되었으니 예외처리가 가능한 부분이라고 생각한다. 무엇보다 <code>jose</code>를 지원하지 않는 것에서 굉장히 우울해져버렸다. 그 이유는...<br>
 <br>
 
 <center>
 <audio controls="controls">
-  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-01-13-stt-step-by-step/hanbon.mp3"></source>
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/mijin.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<br>
+<code>mijin (한국어, 여성 음색)</code>
+</center>
+
+<br>
+
+<center>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/jinho.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<br>
+<code>jinho (한국어, 남성 음색)</code>
+</center>
+
+<br>
+
+<center>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/clara.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<br>
+<code>clara (영어, 여성 음색)</code>
+</center>
+
+<br>
+
+<center>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/matt.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<br>
+<code>matt (영어, 남성 음색)</code>
+</center>
+
+<br>
+
+<center>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/shinji.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<br>
+<code>shinji (일본어, 남성 음색)</code>
+</center>
+
+<br>
+
+<center>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/meimei.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<br>
+<code>meimei (중국어, 여성 음색)</code>
+</center>
+
+<br>
+
+<center>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/liangliang.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<br>
+<code>liangliang (중국어, 남성 음색)</code>
+</center>
+
+<br>
+
+<center>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/jose.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/carmen.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<br>
+<code>jose (스페인어, 남성 음색)</code>
+</center>
+
+<br>
+
+<center>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/carmen.mp3"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<br>
+<code>carmen (스페인어, 여성 음색)</code>
+</center>
+
+<br>
+
+</center>
+
+</details>
+
+<br>
+&nbsp;다 각국의 언어로 TTS를 진행했지만 한국어를 지원하는 음성은 뭐였냐면...<br>
+<br>
+
+<center>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/hanbon.mp3"></source>
   <p>Your browser does not support the audio element.</p>
 </audio>
 <br>
@@ -117,9 +275,11 @@ output
 </center>
 
 <br>
-&nbsp;마침내 한본어가 성공해버려서! TTS는 필자의 영역이 아니기에 잘 모르지만 예컨대 텍스트를 발음 기호로 변환 후 처리하는 방식이 아닐까? 그러지 않고서야 이게 될 리가 없어서...<br>
+&nbsp;정말 이해할 수 없지만 이게 돼버렸다! 영어로 발음 기호를 적어서 준 것도, 일본어로 변환해서 준 것도 아니고... <strong>그냥 한국어를 전달</strong>했는데 TTS가 된다! 다른 언어들은 한국어만 전달하면 인식할 수 있는 단어가 없어 <code>HTTPError 400</code>을 발생시킨다. <strong>오직 <code>shinji</code> , 일본어에만 가능하다!</strong>
 <br>
-&nbsp;여하튼 한본어가 성공했으니 저 말을 스페인 억양으로 너무 시켜보고 싶은데 그게 안된다...... 어서 jose를 지원해주어라... 클로바......
+&nbsp;텍스트를 발음 기호로 변환 후 처리하는 방식이 아닐까? 라는 생각을 했는데, 그런 방식이면 어떤 언어던 다 작동되는게 맞고... 정말정말 이해할 수 없다... 어쩌면 클로바 팀도 한본어를 꿈꾸고 계셨던걸까 ㅋㅅㅋ?<br>
+<br>
+&nbsp;여하튼 한본어가 성공했으니 저 말을 스페인 억양으로 너무 시켜보고 싶은데 그게 안돼서 아쉽다...... 일본어도 해냈으니 스페인어도 해내실 수 있습니다...... 클로바 화이팅...!
 <br>
 <br>
 <br>
