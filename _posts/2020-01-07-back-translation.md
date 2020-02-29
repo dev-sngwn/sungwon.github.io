@@ -5,7 +5,7 @@ subtitle: ": 번역기 성능 영혼까지 끌어모으기"
 tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 ---
 > 직접 발표를 진행한 내용입니다,<br>
-> 본 글보다 쉽게 설명하였으니 혹여나 내용이 어렵다면 영상을 먼저 보시길 권장합니다.
+> 본 글보다 쉽게 설명하였으니 혹여나 내용이 어렵다면 영상을 먼저 보시길 권장합니다.<br>
 > Link: [my-slide-and-presentation](https://github.com/dev-sngwn/my-slide-and-presentation)
 <br>
 
@@ -32,7 +32,7 @@ tags: [BackTranslation, Transformer, NMT, Translation, WMT]
 
 </center>
 <br>
-&nbsp; 기본적으로 기계 번역 모델은 Encoder-Decoder 구조를 이루며 <i>Sourece Sentence</i>가 Encoder에 입력되고, <i>Target Sentence</i>가 Decoder에 입력되며 훈련을 진행한다. 고로 두 문장이 한 쌍을 이루는 병렬 데이터가 불가피하다. 그런데 단일 데이터만으로 훈련을 하겠다니? 잘 상상이 가지 않는다. 저자들은 두 가지 방법을 제안했다.<br>
+&nbsp; 기본적으로 기계 번역 모델은 Encoder-Decoder 구조를 이루며 <i>Source Sentence</i>가 Encoder에 입력되고, <i>Target Sentence</i>가 Decoder에 입력되며 훈련을 진행한다. 고로 두 문장이 한 쌍을 이루는 병렬 데이터가 불가피하다. 그런데 단일 데이터만으로 훈련을 하겠다니? 잘 상상이 가지 않는다. 저자들은 두 가지 방법을 제안했다.<br>
 <br>
 <br>
 <br>
