@@ -14,9 +14,9 @@ tags: [Papago, NMT, MachineTranslation, Translation, NCP, NaverCloud, NaverCloud
 <br>
 &nbsp;자연어 처리를 공부하는 사람 중 코딩을 즐기는 편이라면 아마 본인이 직접 제작한 번역기가 있을 것이다. 대다수의 딥러닝 분야들이 그러하듯이 모델의 구조도 중요하지만 그보다 <strong>데이터의 양</strong>이 <strong>절대적으로 성능에 직결</strong>된다(물론 RNN과 Transformer를 비교하자는 건 아니다).<br>
 <br>
-&nbsp;그런 의미에서 <i>Back Translation</i>이라는 개념은 데이터를 왕창 생산(<del>뻠삥</del>)할 수 있다는 점에서 굉장히 매력적인 전략이었다(자세한 내용이 궁금하다면 [<i>Back Translation 정리</i>](https://dev-sngwn.github.io/2020-01-07-back-translation/)를 참고하자). 하지만 그마저도 <strong>64만 개 이상의 병렬 데이터</strong>가 있을 때부터 효과를 보인다는 것에서 토이 프로젝트에 적용하기는 쉽지 않았다.<br>
+&nbsp;그런 의미에서 <i>Back Translation</i> 이라는 개념은 데이터를 왕창 생산(<del>뻠삥</del>)할 수 있다는 점에서 굉장히 매력적인 전략이었다(자세한 내용이 궁금하다면 [<i>Back Translation 정리</i>](https://dev-sngwn.github.io/2020-01-07-back-translation/) 를 참고하자). 하지만 그마저도 <strong>64만 개 이상의 병렬 데이터</strong>가 있을 때부터 효과를 보인다는 것에서 토이 프로젝트에 적용하기는 쉽지 않았다.<br>
 <br>
-&nbsp;그런 와중에 Naver Cloud Platform(이하 NCP)의 <span style="background-color: #ddffdd"><strong><i>Papago NMT</i></strong></span>를 발견했는데, <i>"구글 번역기 복붙해서 쓰지 누가 이걸 이렇게 쓰나...?"</i> 라는 생각을 하다가 <strong><i>"파파고는 그래도 64만개는 넘게 학습하지 않았을까...?" "Back Translation과 결합하면 어떨까?!"</i></strong>하는 아이디어가 번뜩 떠오른 것이다! 이른바 <strong>\<네이버의 기술력으로 내 번역기 버프하기\></strong> 프로젝트!
+&nbsp;그런 와중에 Naver Cloud Platform(이하 NCP)의 <span style="background-color: #ddffdd"><strong><i>Papago NMT</i></strong></span> 를 발견했는데, <i>"구글 번역기 복붙해서 쓰지 누가 이걸 이렇게 쓰나...?"</i> 라는 생각을 하다가 <strong><i>"파파고는 그래도 64만개는 넘게 학습하지 않았을까...?" "Back Translation과 결합하면 어떨까?!" </i></strong>하는 아이디어가 번뜩 떠오른 것이다! 이른바 <strong>\<네이버의 기술력으로 내 번역기 버프하기\></strong> 프로젝트!
 <br>
 <br>
 <br>
@@ -25,23 +25,25 @@ tags: [Papago, NMT, MachineTranslation, Translation, NCP, NaverCloud, NaverCloud
 --------------------------
 &nbsp;언제나와 같이 <a href="https://www.ncloud.com/"><strong>NCP</strong></a>로 이동하여 서비스를 신청하도록 하자. <strong>[서비스] → [AI Service] → [Papago NMT]</strong>로 이동한 후 <strong>[이용 신청하기]</strong>를 눌러주길 바란다.
 <center>
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-tts-step-by-step/01_main.png"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-papago-step-by-step/01_main.png"/>
 <i>넘나 자주 본 화면...<i>
 </center>
 
 <br>
+<br>
 
 <center>
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-tts-step-by-step/02_service.png"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-papago-step-by-step/02_service.png"/>
 <i><strong>[Application 등록]</strong>까지 빠르게 진행하겠다.<i>
 </center>
 
+<br>
 <br>
 &nbsp;그리고 사용할 서비스로 <i>Papago NMT</i>와 <i>Papago Language Detection</i>을 체크한다. <i>Papago Language Detection</i>도 <strong>유료로 책정</strong>이 되기 때문에 번역할 언어를 매번 지정해줘도 상관 없다면(사실 데이터 구축에 사용할 예정이니 이게 맞다) 체크를 하지 않아도 된다. 필자는 크레딧에 아직 여유가 있기에 최대한 많은 것을 사용해보도록 하겠다!<br>
 <br>
 
 <center>
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-tts-step-by-step/03_service.png"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-papago-step-by-step/03_service.png"/>
 </center>
 
 <br>
@@ -49,7 +51,7 @@ tags: [Papago, NMT, MachineTranslation, Translation, NCP, NaverCloud, NaverCloud
 <br>
 
 <center>
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-tts-step-by-step/04.png"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-papago-step-by-step/04.png"/>
 </center>
 
 <br>
@@ -57,7 +59,7 @@ tags: [Papago, NMT, MachineTranslation, Translation, NCP, NaverCloud, NaverCloud
 <br>
 
 <center>
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-tts-step-by-step/05.png"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-papago-step-by-step/05.png"/>
 </center>
 
 <br>
@@ -70,7 +72,7 @@ tags: [Papago, NMT, MachineTranslation, Translation, NCP, NaverCloud, NaverCloud
 <br>
 
 <center>
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-tts-step-by-step/06.png"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-papago-step-by-step/06.png"/>
 </center>
 
 <br>
