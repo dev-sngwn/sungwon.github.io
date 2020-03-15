@@ -44,7 +44,7 @@ tags: [Papago, NMT, MachineTranslation, Translation, NCP, NaverCloud, NaverCloud
 
 <br>
 <br>
-&nbsp;그리고 사용할 서비스로 <i>Papago NMT</i>와 <i>Papago Language Detection</i>을 체크한다. <i>Papago Language Detection</i>도 <strong>유료로 책정</strong>이 되기 때문에 번역할 언어를 매번 지정해줘도 상관 없다면(사실 데이터 구축에 사용할 예정이니 이게 맞다) 체크를 하지 않아도 된다. 필자는 크레딧에 아직 여유가 있기에 최대한 많은 것을 사용해보도록 하겠다!<br>
+&nbsp;그리고 사용할 서비스로 <i>Papago NMT</i>와 <i>Papago Language Detection</i> 을 체크한다. <i>Papago Language Detection</i> 도 <strong>유료로 책정</strong>이 되기 때문에 번역할 언어를 매번 지정해줘도 상관 없다면(사실 데이터 구축에 사용할 예정이니 이게 맞다) 체크를 하지 않아도 된다. 필자는 크레딧에 아직 여유가 있기에 최대한 많은 것을 사용해보도록 하겠다!<br>
 <br>
 
 <center>
@@ -133,7 +133,10 @@ def get_language_code(client_id, client_secret, text):
 <br>
 ~~~ python
 def get_translation(client_id, client_secret, text, _from, to, honorific=False):
-    data = "source=" + _from + "&target=" + to + "&text=" + urllib.parse.quote(text)
+    data =\
+    "source=" + _from + \
+    "&target=" + to + \
+    "&text=" + urllib.parse.quote(text)
     
     if honorific & (_from=="en"): data += "&honorific=true"
         
@@ -178,7 +181,6 @@ print("원본 문장:" + text)
 ko2en = get_translation(client_id, client_secret, text, code, target_code)
 print("한영 번역 결과:\n" + ko2en + "\n")
 ~~~
-<br>
 ~~~ markdown
 원본 문장:
 이번 모듈은 JSON 형태로 사용하는 방법을 알아내지 못했다. (필자의 견문이 부족해서…)
@@ -216,7 +218,7 @@ Note: I have conducted the test on the Jupiter Notebook and may not work in any 
 참고: 저는 목성 노트북에서 테스트를 수행했고 다른 환경에서는 작동하지 않을 수 있습니다.
 ~~~
 <br>
-&nbsp;한영한 번역을 잘 만들어낸다는 것은 <strong>문장의 핵심을 번역에 잘 반영</strong>하고 있다고 해석할 수 있다. 게다가 높임말 옵션은 적용되지 않은 결과랑 비교해서보니 뭔가 귀엽게도 보인다, 갑자기 순해진 느낌이랄까?
+&nbsp;한영한 번역을 잘 만들어낸다는 것은 <strong>문장의 핵심을 번역에 잘 반영</strong>하고 있다고 해석할 수 있다. 게다가 높임말 옵션은 적용되지 않은 결과랑 비교해서보니 뭔가 귀엽게도 보인다, 갑자기 순해진 느낌이랄까?<br>
 <br>
 &nbsp;항상 같은 결과를 보여주는 걸 보니 <i>Beam Search</i> 기반으로 번역을 생성하는 듯 하다 (안정성을 생각하면 당연하다). 논문을 따르면 문장이 난해할 수록 높은 성능을 보이던데... 성능이 너무 좋아 문제가 되려나 싶다... 이상!
 
