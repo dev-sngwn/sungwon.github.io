@@ -24,9 +24,12 @@ tags: [Papago, NMT, MachineTranslation, Translation, NCP, NaverCloud, NaverCloud
 #### 1. 애플리케이션 등록
 --------------------------
 &nbsp;언제나와 같이 <a href="https://www.ncloud.com/"><strong>NCP</strong></a>로 이동하여 서비스를 신청하도록 하자. <strong>[서비스] → [AI Service] → [Papago NMT]</strong>로 이동한 후 <strong>[이용 신청하기]</strong>를 눌러주길 바란다.
+
 <center>
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-papago-step-by-step/01_main.png"/>
-<i>넘나 자주 본 화면...<i>
+</center>
+<center>
+<i>넘나 자주 본 화면...</i>
 </center>
 
 <br>
@@ -34,7 +37,9 @@ tags: [Papago, NMT, MachineTranslation, Translation, NCP, NaverCloud, NaverCloud
 
 <center>
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-03-15-papago-step-by-step/02_service.png"/>
-<i><strong>[Application 등록]</strong>까지 빠르게 진행하겠다.<i>
+</center>
+<center>
+<i><strong>[Application 등록]</strong>까지 빠르게 진행하겠다.</i>
 </center>
 
 <br>
