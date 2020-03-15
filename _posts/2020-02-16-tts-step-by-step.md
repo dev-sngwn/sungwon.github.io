@@ -25,7 +25,7 @@ tags: [TTS, TextToSpeech, CSS, Clova, NCP, NaverCloud, NaverCloudPlatform]
 <img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-02-16-tts-step-by-step/01_main.png"/>
 </center>
 <br>
-&nbsp;TTS는 STT와 굉장히 밀접한 관계를 가지고 있다. CSR과 CSS 또한 그러하여, 사용법이 굉장히 유사하다. 먼저 언제나 그랬듯이 <strong>[Application 등록]</strong>을 눌러 서비스를 생성하길 바란다.<br>
+&nbsp;TTS는 STT와 굉장히 밀접한 관계를 가지고 있다. CSR과 CSS 또한 그러하여, 사용법이 굉장히 유사하다. <strong>[Application 등록]</strong>을 눌러 서비스를 생성!<br>
 <br>
 
 <center>
