@@ -35,7 +35,7 @@ tags: [Clova, FaceRecognition, Recognition, FaceSimilarity, Similarity, NCP, Nav
 <br>
 <br>
 
-##### ▶ 유명인 얼굴 인식 (Celebrity) API
+#### ▶ 유명인 얼굴 인식 (Celebrity) API
 <br>
 &nbsp;우선 테스트엔 아래 이미지를 사용하였다.
 <br>
@@ -47,13 +47,14 @@ tags: [Clova, FaceRecognition, Recognition, FaceSimilarity, Similarity, NCP, Nav
 </center>
 
 <br>
-&nbsp;API가 요구하는 데이터는 <strong>Binary 타입의 2MB 이하의 이미지 데이터</strong>이다. 우린 이를 위해 <code>pillow</code>를 활용해 이미지를 불러와 <code>io</code>로 Binary 변환을 할 것이다. <br>
+&nbsp;API가 요구하는 데이터는 <strong>Binary 타입의 2MB 이하의 이미지 데이터</strong>이다. 우린 이를 위해 <code>pillow</code>로 이미지를 불러와 <code>io</code>로 Binary 변환을 할 것이다. <br>
 <br>
 
 > <i>NCP 측에서 제공하는 가이드에서는 이미지를 애초에 Binary로 읽어오는데, </i><br>
 > <i>그대로 사용했다가 <code>Timeout Error</code>를 마주했다... 2MB가 넘지 않는데 왜?ㅠ</i>
 
 <br>
+
 ~~~ python
 import io
 from PIL import Image
@@ -74,6 +75,7 @@ print("Resized Shape:", img.size)
 
 image_byte = convert_to_byte_array(img)
 ~~~
+<br>
 ~~~ markdown
 out:
 
@@ -83,7 +85,7 @@ Resized Shape: (746, 498)
 <br>
 &nbsp;사용한 이미지가 <code>5974 x 3988</code> 이라는 괴랄한 해상도를 가지고 있어 1/8 수준인 <code>746 x 498</code>로 낮춘 후, Binary로 변환하였다.<br>
 <br>
-&nbsp;테스트 과정에서 <code>cv2</code>를 사용하기도 했었는데, OpenCV가 RGB를 BGR로 뒤집어 처리하는 특성 때문에 오류를 야기하는 듯해서 편한 <code>pillow</code> 길로 갔다. 혹시라도 <code>cv2</code>를 적용했는데 성능이 이상하다면 이미지 채널 상태를 살펴보시길!<br>
+&nbsp;테스트 과정에서 <code>cv2</code>를 사용하기도 했었는데, <i>OpenCV</i> 가 RGB를 BGR로 뒤집어 처리하는 특성 때문에 오류를 야기하는 듯해서 편한 <code>pillow</code> 길로 갔다. 혹시라도 <code>cv2</code>를 적용했는데 성능이 이상하다면 이미지 채널 상태를 살펴보시길!<br>
 <br>
 &nbsp;API가 요구하는 데이터가 준비되었으니, 이제 보낼 일만 남았다. 아까 준비해둔 <code>Client ID</code>와 <code>Client Secret</code>를 꺼내어 아래 소스에 적용시키도록 하자!<br>
 <br>
@@ -113,7 +115,7 @@ else:
     print("Error Code:" + response.text)
 ~~~
 <br>
-~~~ json
+~~~ markdown
 out:
 
 {
@@ -138,6 +140,7 @@ out:
 <br>
 &nbsp;일단 너무 쉽게 결과에 도달한 것에 <strong>박수 짝짝</strong>이다. 그리고 뜬금없는 김민석 1프로ㅋㅋㅋㅋㅋㅋㅋ에 잠시 웃고... 원인을 파악해보자. 입력의 크기가 문제인 걸까? 크기를 이래저래 조절해보았다.<br>
 <br>
+
 | resize_const | celeb  | confidence |
 |--------------|--------|------------|
 | 4            | 이다희 | 0.18552    |
@@ -148,6 +151,7 @@ out:
 | 12           | 김희선 | 0.118982   |
 | 16           | 이다희 | 0.271809   |
 | 20           | 이연희 | 0.0796587  |
+
 <br>
 &nbsp;참고로 <code>찾지 못함</code> 결과도 존재한다. 위 결과가 어떻게든 찾아진 결과임에 유의하자.<br>
 <br>
@@ -157,7 +161,7 @@ out:
 
 <br>
 
-##### ▶ 얼굴 감지 (Face) API
+#### ▶ 얼굴 감지 (Face) API
 <br>
 &nbsp;얼굴 감지는 그야말로 얼굴을 <strong>감지하여 분석</strong>한다. 잘은 모르지만 분석된 정보를 바탕으로 이렇게 저렇게하면 Face ID가 완성되지 않을까????? 비전에 종사하는 여러분, 화이팅이다.<br>
 <br>
@@ -166,7 +170,7 @@ out:
 &nbsp;결과는 아래와 같다.
 <br>
 
-~~~ json
+~~~ markdown
 out:
 
 {
