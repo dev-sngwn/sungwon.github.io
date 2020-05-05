@@ -234,13 +234,13 @@ img
 
 <br>
 <center>
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-05-05-cfr-step-by-step/sample_roi.jpg"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-05-05-cfr-step-by-step/sample_roi.png"/>
 <br>
 <i>Output</i>
 </center>
 
 <br>
-&nbsp;호오... 아주 정확하다. 그 외 다른 값들도 딱 봐도 설득력 있는 결과가 나타났다. <code>emotion</code>이나 <code>age</code>정보는 활용하기도 좋다! landmark</code>가 <code>None</code>인 것에 대해 가이드에도 설명이 없는 것이 다소 아쉽지만, 예컨대  <code>pose</code>가 <code>part_face</code>여서 그런 것 같다 <i>(얼굴의 일부분임을 알고도 좌표를 찍으려면 에러가 날 수 있으니)</i>. 확인을 위해 정면을 보고 있는 다른 사진으로 테스트를 해보았다.
+&nbsp;호오... 아주 정확하다. 그 외 다른 값들도 딱 봐도 설득력 있는 결과가 나타났다. <code>emotion</code>이나 <code>age</code>정보는 활용하기도 좋다! <code>landmark</code>가 <code>None</code>인 것에 대해 가이드에도 설명이 없는 것이 다소 아쉽지만, 예컨대  <code>pose</code>가 <code>part_face</code>여서 그런 것 같다 <i>(얼굴의 일부분임을 알고도 좌표를 찍으려면 에러가 날 수 있으니)</i>. 확인을 위해 정면을 보고 있는 다른 사진으로 테스트를 해보았다.
 <br>
 
 <br>
@@ -251,7 +251,7 @@ img
 </center>
 <br>
 
-~~~ json
+~~~ markdown
 ...
 "landmark":{
    "leftEye":{
@@ -305,7 +305,7 @@ img
 <br>
 
 <center>
-<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-05-05-cfr-step-by-step/sample2_roi.jpg"/>
+<img src="https://raw.githubusercontent.com/dev-sngwn/dev-sngwn.github.io/master/_posts/assets/2020-05-05-cfr-step-by-step/sample2_roi.png"/>
 <br>
 <i>(쥐똥만한 <code>landmark</code> 좌표가 찍혀있다)</i>
 </center>
