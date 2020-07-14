@@ -38,7 +38,8 @@ files = glob.glob("./training-parallel-nc-v11/*")
 for file in files:
     print(os.path.basename(file), "Length:", data_len(file))
 ~~~
-~~~Markdown
+<br>
+~~~javascript
 news-commentary-v11.cs-en.cs Length: 191865
 news-commentary-v11.cs-en.en Length: 192052
 news-commentary-v11.de-en.de Length: 243330
@@ -55,7 +56,7 @@ news-commentary-v11.ru-en.ru Length: 196587
 > 추가로 구분자가 "\n"이 아니라던가... 도 생각해봤지만 이 또한 답이 없는 접근이었다.
 
 <br>
-&nbsp;의심은 곧 정답을 찾아주었는데, 바로 <u>News Commentary v11</u>를 제작한 <strong>CASMACAT</strong> 측에서 다운로드하는 것이었다! 해당 페이지는 [여기](http://www.casmacat.eu/corpus/news-commentary.html)를 눌러 방문할 수 있다. 문제는 파일이 다소 낯선 <code>XLIFF</code> 형태라는 것인데, 이를 <strong>파싱하는 법을 추가로 정리</strong>하고자 한다. 앞서 언급한 것처럼 필자는 <i>de-en</i> 데이터가 필요하기 때문에 <i>de-en</i> 데이터를 예시로 설명하도록 하겠다.<br>
+&nbsp;의심은 곧 정답을 찾아주었는데, 바로 <u>News Commentary v11</u>를 제작한 <strong>[CASMACAT](http://www.casmacat.eu/corpus/news-commentary.html) 측에서 직접 다운로드하는 것</strong>이었다! 문제는 파일이 다소 낯선 <code>xliff</code> 형태라는 것인데, 이를 <strong>파싱하는 법을 추가로 정리</strong>하고자 한다. 앞서 언급한 것처럼 필자는 <i>de-en</i> 데이터가 필요하기 때문에 <i>de-en</i> 데이터를 예시로 설명하도록 하겠다.<br>
 <br>
 &nbsp;다운로드한 <code>news-commentary-v11.de-en.xliff.gz</code> 파일의 압축을 해제하여 <code>xliff</code> 파일을 얻는다. 얻어진 파일은 아래와 같이 불러올 수 있다.<br>
 <br>
@@ -67,7 +68,8 @@ with open("./news-commentary-v11.de-en.xliff", "r", encoding="utf-8") as f:
 print("Data Size:", len(raw))
 print(raw[:1000])
 ~~~
-~~~Markdown
+<br>
+~~~xml
 Data Size: 91850522
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2">
@@ -90,7 +92,7 @@ Data Size: 91850522
 ~~~
 
 <br>
-&nbsp;소스와 타겟 문장이 제법 예쁘게 나뉘어 있음을 알 수 있다! <code>'\n'</code>을 기준으로 문장을 쪼갠 후, <code><source></code> 태그와 <code><target></code> 태그로 구분하여 저장하면 병렬 쌍을 완성할 수 있다. 다만 유의할 부분은...<br>
+&nbsp;소스와 타겟 문장이 제법 예쁘게 나뉘어 있음을 알 수 있다! <code>'\n'</code>을 기준으로 문장을 쪼갠 후, <code>\<source\></code> 태그와 <code>\<target\></code> 태그로 구분하여 저장하면 병렬 쌍을 완성할 수 있다. 다만 유의할 부분은...<br>
 <br>
 
 ~~~python
@@ -102,7 +104,8 @@ for col in raw.splitlines():
         
 print(len(src), len(tgt))
 ~~~
-~~~Markdown
+<br>
+~~~javascript
 239249 239162
 ~~~
 
@@ -122,7 +125,8 @@ for col in raw.splitlines():
         
 print(len(src), len(tgt))
 ~~~
-~~~Markdown
+<br>
+~~~javascript
 242770 242770
 ~~~
 
