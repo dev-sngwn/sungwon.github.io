@@ -18,10 +18,6 @@ tags: [WMT, MachineTraslation, Translation, NMT, XLIFF]
 <br>
 &nbsp;문제가 발생한 것은 바로 <u>News Commentary v11</u>이다. 보기엔 전혀 문제가 없지만 압축을 해제하고 데이터를 직접 살펴보면...<br>
 <br>
-
-> 혹시 <i>Windows</i> 환경에서 <i>tgz</i> 파일을 다루지 못해 강제 <i>Ubuntu</i>행을 당했다면 <i>7-Zip</i>으로 구원받도록 하자.
-
-<br>
 ~~~python
 def data_len(path, encoding="utf-8"):
     
@@ -38,8 +34,9 @@ files = glob.glob("./training-parallel-nc-v11/*")
 for file in files:
     print(os.path.basename(file), "Length:", data_len(file))
 ~~~
-<br>
 ~~~javascript
+out:
+
 news-commentary-v11.cs-en.cs Length: 191865
 news-commentary-v11.cs-en.en Length: 192052
 news-commentary-v11.de-en.de Length: 243330
@@ -47,6 +44,8 @@ news-commentary-v11.de-en.en Length: 243480
 news-commentary-v11.ru-en.en Length: 196844
 news-commentary-v11.ru-en.ru Length: 196587
 ~~~
+<br>
+<i>* 혹시 Windows 환경에서 tgz 파일을 다루지 못해 강제 Ubuntu행을 당했다면 7-Zip으로 구원받도록 하자.</i>
 <br>
 &nbsp;분명 병렬 데이터인데 <strong>단 한 세트도 병렬이 일치하지 않는다!</strong> 어디서부터 병렬 쌍이 틀어진 것인지 알 수 없기 때문에 함부로 데이터를 선별할 수도 없고... <br>
 <br>
@@ -68,8 +67,9 @@ with open("./news-commentary-v11.de-en.xliff", "r", encoding="utf-8") as f:
 print("Data Size:", len(raw))
 print(raw[:1000])
 ~~~
-<br>
 ~~~xml
+out:
+
 Data Size: 91850522
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2">
@@ -92,7 +92,7 @@ Data Size: 91850522
 ~~~
 
 <br>
-&nbsp;소스와 타겟 문장이 제법 예쁘게 나뉘어 있음을 알 수 있다! <code>'\n'</code>을 기준으로 문장을 쪼갠 후, <code>\<source\></code> 태그와 <code>\<target\></code> 태그로 구분하여 저장하면 병렬 쌍을 완성할 수 있다. 다만 유의할 부분은...<br>
+&nbsp;소스와 타겟 문장이 제법 예쁘게 나뉘어 있음을 알 수 있다! <code>'\n'</code>을 기준으로 문장을 쪼갠 후, <code>source</code> 태그와 <code>target</code> 태그로 구분하여 저장하면 병렬 쌍을 완성할 수 있다. 다만 유의할 부분은...<br>
 <br>
 
 ~~~python
@@ -104,8 +104,9 @@ for col in raw.splitlines():
         
 print(len(src), len(tgt))
 ~~~
-<br>
 ~~~javascript
+out:
+
 239249 239162
 ~~~
 
@@ -125,8 +126,9 @@ for col in raw.splitlines():
         
 print(len(src), len(tgt))
 ~~~
-<br>
 ~~~javascript
+out:
+
 242770 242770
 ~~~
 
